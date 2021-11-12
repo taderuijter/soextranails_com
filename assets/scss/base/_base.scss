@@ -1,0 +1,22 @@
+/* Selection */
+::selection {
+    background: $black;
+    color: $white;
+}
+
+/* Links */
+a {
+    color: $black;
+    text-decoration: underline;
+    font-weight: 500;
+
+    &:hover {
+        color: lighten($black, 25%);
+        text-decoration: none;
+    }
+
+    &::visited {
+        color: $black;
+        text-decoration: underline;
+    }
+}

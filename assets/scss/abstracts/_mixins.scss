@@ -1,0 +1,79 @@
+/* Screens */
+@mixin xs-screen() {
+  @media (min-width: 375px) {
+    @content;
+  }
+}
+
+@mixin sm-screen() {
+  @media (min-width: 425px) {
+    @content;
+  }
+}
+
+@mixin md-screen() {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin lg-screen() {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin xl-screen() {
+  @media (min-width: 1366px) {
+    @content;
+  }
+}
+
+/* Custom screens */
+@mixin custom-screen($res) {
+  @media (min-width: $res+"px") {
+    @content;
+  }
+}
+
+/* Border radius mixin */
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius ;
+}
+
+/* Transition */
+@mixin transition {
+  -webkit-transition: all ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/* Centered content */
+@mixin center-align {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Vertical aligned */
+@mixin vertical-align {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Horizontal align */
+@mixin horizontal-align {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin white-filter {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(81deg) brightness(103%) contrast(101%);
+}
