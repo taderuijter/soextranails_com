@@ -1,2 +1,7 @@
 // Bootstrap Utilities
 @import "../../../node_modules/bootstrap/scss/bootstrap-utilities.scss";
+
+// Skeleton
+.skeleton {
+    background-color: lighten($black, 95%);
+}

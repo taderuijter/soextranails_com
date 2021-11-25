@@ -1,17 +1,25 @@
 /* Defines the fallback font */
 body
 {   
-    color: $black;
-    font-family: $fallback;
+  color: $black;
+  font-family: $fallback;
 }
 
 /* Switch to the custom font when it's loaded */
 .wf-active body
 {
-    font-family: $custom-family;
-    font-weight: 400;
+  font-family: $custom-family;
+  font-weight: 400;
 
-    h1, h2, h3, h4, h5, h6 {
-        font-weight: 700;
-    }
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+  }
+}
+
+
+@font-face {
+  font-family: 'HyperwaveOne';
+  src:  url('~static/fonts/hyperwaveone.woff2') format('woff2'), 
+        url('~static/fonts/hyperwaveone.woff') format('woff'),
+        url('~static/fonts/hyperwaveone.otf') format('truetype');
 }

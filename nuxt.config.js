@@ -112,7 +112,7 @@ export default {
   // Webfontloader (async custom font loader): https://github.com/Developmint/nuxt-webfontloader
   webfontloader: {
     google: {
-      families: ['Roboto:400,500,700,400italic|Material+Icons']
+      families: ['Roboto+Condensed:wght@400,700&display=swap']
     }
   },
 

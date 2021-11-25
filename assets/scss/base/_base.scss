@@ -1,3 +1,12 @@
+/* Body */
+body {
+    padding: 0 25px;
+
+    @include md-screen {
+        padding: 0 45px;
+    }
+}
+
 /* Selection */
 ::selection {
     background: $black;
