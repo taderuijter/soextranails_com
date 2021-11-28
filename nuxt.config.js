@@ -4,16 +4,15 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-
     htmlAttrs: {
-      lang: 'nl-NL',
+      lang: 'en'
     },
 
-    title: 'NUXT Starter Kit',
+    title: 'So Extra Nails 💅 Nail Art Rotterdam • BIAB™, Extensions & more',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nomad Ventures Nuxt Starter Kit' },
+      { hid: 'description', name: 'description', content: 'Be bold and express yourself with bespoke nail art on natural or artificial nails. Located in the city centre of Rotterdam and still open for new bookings!' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
@@ -62,7 +61,6 @@ export default {
     'nuxt-webfontloader',
     '@nuxtjs/sitemap',
     '@nuxtjs/feed',
-    'nuxt-lazy-load',
     '@nuxtjs/robots',
     '@nuxtjs/localtunnel',
     "nuxt-imagemin",
@@ -80,20 +78,20 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     meta: {
-      name: "Nuxt Starter Kit",
-      author: "Nomad Ventures",
-      description: "Put a description of your PWA app here",
-      theme_color: "#0080ff",
-      lang: "nl",
+      name: "So Extra Nails",
+      author: "Kim Kers",
+      description: "Be bold and express yourself with bespoke nail art on natural or artificial nails.",
+      theme_color: "#58EEEF",
+      lang: "en",
       ogType: "website",
-      ogHost: "https://nuxt.nomadventrs.com",
+      ogHost: "https://www.soextranails.com",
     }
   },
 
   // Sitemap Docmentation: https://sitemap.nuxtjs.org/
   sitemap: {
     path: "/sitemap.xml",
-    hostname: "https://nuxt.nomadventrs.com",
+    hostname: "https://www.soextranails.com",
     cacheTime: 1000 * 60 * 15,
     gzip: true
   },

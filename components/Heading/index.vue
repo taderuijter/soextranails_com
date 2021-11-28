@@ -7,38 +7,55 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      title: String
-    }
+export default {
+  props: {
+    title: String
   }
+}
 </script>
 
 <style lang="scss" scoped>
-  
-  .heading {
-    h1,h2,h3,h4,h5,h6,p,span {
-      font-family: 'HyperwaveOne';
+.heading {
+  h1,h2,h3,h4,h5,h6,p,span {
+    font-family: 'HyperwaveOne';
+    font-size: 82px;
+    font-weight: 400 !important;
+    line-height: 48px;
+
+    @include sm-screen {
+      font-size: 120px;
+      line-height: 60px;
+    }
+
+    @include md-screen {
+      font-size: 140px;
+      line-height: 72px;
+    }
+
+    @include xl-screen {
       font-size: 160px;
-      font-weight: 400 !important;
-      line-height: 90px;
-    }
-
-    &__black {
-      color: $black !important;
-    }
-
-    &__white {
-      color: $white !important;
-    }
-
-    &__distortion {
-      text-shadow: 4px 4px 0px #FF9BF3, -4px -4px 0px #58EEEF;
-    }
-
-    &__shadow {
-      text-shadow: 4px 4px 0px #000000;
+      line-height: 80px;
     }
   }
-  
+
+  &__black {
+    color: $black !important;
+  }
+
+  &__white {
+    color: $white !important;
+  }
+
+  &__distortion {
+    text-shadow: 3px 3px 0px #FF9BF3, -3px -3px 0px #58EEEF;
+
+    @include md-screen {
+      text-shadow: 4px 4px 0px #FF9BF3, -4px -4px 0px #58EEEF;
+    }
+  }
+
+  &__shadow {
+    text-shadow: 4px 4px 0px #000000;
+  }
+}
 </style>

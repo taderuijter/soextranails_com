@@ -5,14 +5,14 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      label: String,
-      styling: String,
-      icon: String,
-      url: String,
-    }
+export default {
+  props: {
+    label: String,
+    styling: String,
+    icon: String,
+    url: String,
   }
+}
 </script>
 
 <style lang="scss" scoped>
