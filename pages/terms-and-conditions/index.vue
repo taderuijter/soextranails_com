@@ -8,8 +8,6 @@
     </Intro>
     <Content position="text-start">
       <h2>1. - definitions</h2>
-    </Content>
-    <List>
       <ol>
         <li>General Conditions: The present General Conditions.</li>
         <li>So Extra Nails, located at heemskerkstraat 46b and registered with the Chamber of Commerce under number 84794119, can also be found on www.soextranails.com.</li>
@@ -25,32 +23,20 @@
         <li>Confidential Information: non-public information related to a Party and information that a Party declares to be confidential, or which, due to the nature of the information or under the circumstances under which the disclosure takes place, should be treated as confidential.</li>
         <li>Employee: The person who is employed by one of the Parties, or who carries out work for the relevant Party on an assignment basis.</li>
       </ol>
-    </List>
-    <Content position="text-start">
       <h2>2. - Applicability and interpretation</h2>
-    </Content>
-    <List>
       <ol>
         <li>The General Terms and Conditions apply to and form part of every (legal) act related to the preparation, conclusion or performance of the Agreement. The General Terms and Conditions also apply to all subsequent Agreements between the Client and So Extra Nails, if the Client has accepted their validity in previous Agreements with So Extra Nails.</li>
         <li>The applicability of any purchase or other conditions of the Client is expressly excluded.</li>
         <li>Provisions or conditions set by the Client that deviate from or do not appear in the General Terms and Conditions only apply to the Agreement insofar as the Parties agree in writing.</li>
         <li>In the event that specific product, promotion or service conditions apply in addition to these General Terms and Conditions, those conditions also apply, but the Consumer can always invoke the applicable provision that is most favorable to him in the event of conflicting conditions.</li>
       </ol>
-    </List>
-    <Content position="text-start">
       <h2>3. - Realization of the agreement</h2>
-    </Content>
-    <List>
       <ol>
         <li>All Quotations and other offers from So Extra Nails are without obligation and valid for a period of 1 day.</li>
         <li>The Agreement is concluded at the moment of acceptance by the Client of the Offer from So Extra Nails and the fulfillment of the conditions set by So Extra Nails. If the Consumer has accepted the offer electronically, So Extra Nails will immediately confirm receipt of the acceptance of the offer electronically. As long as the receipt of this acceptance has not been confirmed, the Consumer has the option to dissolve the Agreement.</li>
         <li>An offer is in any case deemed to have been accepted if the Agreement is executed without contradiction. The offer can be accepted orally or in writing.</li>
       </ol>
-    </List>
-    <Content position="text-start">
       <h2>4. - Performance of the Agreement</h2>
-    </Content>
-    <List>
       <ol>
         <li>So Extra Nails will start implementation after the Agreement has been concluded, on the date or time as agreed in the Agreement. If no date of fulfillment has been agreed, So Extra Nails will immediately start the execution of the Agreement.</li>
         <li>If delivery cannot be made within the agreed term, So Extra Nails will inform the Client. The consumer is given the option to dissolve the Agreement free of charge.</li>
@@ -59,11 +45,7 @@
         <li>If and insofar as required for the proper execution of the Agreement, So Extra Nails has the right to engage third parties for the execution of the Agreement. The General Terms and Conditions also apply to the work performed by third parties in the context of the Agreement. These third parties are not authorized to represent.</li>
         <li>So Extra Nails is not obliged to have work performed by third parties designated by the Client. The Client is liable for goods for the performance of the Agreement that have been prescribed by or on behalf of the Client, or which are or would be delivered by a supplier designated by the Client, as well as for the non-delivery or late delivery thereof.</li>
       </ol>
-    </List>
-    <Content position="text-start">
       <h2>5. - Duration and end of the Agreement</h2>
-    </Content>
-    <List>
       <ol>
         <li>The duration of the Agreement is laid down in the Agreement. If no duration is included, the Agreement will be entered into for the duration necessary for the provision of the Products or Services.</li>
         <li>The Consumer can terminate the Agreement at any time with a notice period of one month. If there is a term of a maximum of one year, this option only exists after the end of the term of the Agreement.</li>
@@ -74,11 +56,7 @@
         </ol>
         <li>Obligations that, by their nature, are intended to continue after the end of the Agreement, remain in full force and effect after the end of the Agreement and apply to the Client and its legal successors.</li>
       </ol>
-    </List>
-    <Content position="text-start">
       <h2>6. - price & payment</h2>
-    </Content>
-    <List>
       <ol>
         <li>Client pays So Extra Nails the amount as stated in the Agreement. All prices quoted by So Extra Nails are in euros. In some cases a deposit is required. The amount to be paid is included in the Agreement.</li>
         <li>All prices mentioned by So Extra Nails include sales tax (VAT) and other government levies, unless stated otherwise.</li>
@@ -88,19 +66,11 @@
         <li>In the event of late payment, in addition to the amount owed and the statutory interest due thereon, the Client is obliged to pay full compensation for both extrajudicial and judicial collection costs, including the costs for lawyers, lawyers, bailiffs and collection agencies.</li>
         <li>So Extra Nails can inform itself within legal frameworks whether the Client can meet its payment obligations, but also of all facts and factors that are important for a responsible conclusion of the Agreement. If So Extra Nails has good reasons not to enter into the Agreement on the basis of this investigation, it is entitled to refuse an order or request with reasons or to attach special conditions to the execution, such as advance payment.</li>
       </ol>
-    </List>
-    <Content position="text-start">
       <h2>7. - Obligations client</h2>
-    </Content>
-    <List>
       <ol>
         <li>The Client ensures that all (technical) information, decisions and data that it believes are necessary for the execution of the Agreement are provided to So Extra Nails in a timely manner. The Client is responsible for the correctness and completeness thereof. This includes, but is not limited to, compliance with permit applications and other legal requirements.</li>
       </ol>
-    </List>
-    <Content position="text-start">
       <h2>8. - Additional work</h2>
-    </Content>
-    <List>
       <ol>
         <li>All changes in the execution of the Agreement, either at the request of the Client or as a result of the fact that a different execution is necessary due to whatever circumstances, are regarded as additional work if additional costs are involved. These General Terms and Conditions apply to the additional work.</li>
         <li>If additional work is performed at the request or with the consent of the Client, the additional work will be reimbursed by the Client. So Extra Nails may refuse to comply with such a request or enter into negotiations.</li>
@@ -108,50 +78,30 @@
         <li>If (the demand for) additional work arises during the execution of the Agreement, this will not create grounds for termination or dissolution of the Agreement for the Client.</li>
         <li>Cost-increasing circumstances that are not attributable to So Extra Nails will be settled as additional work. So Extra Nails will inform the Client about this as soon as possible. In that case, the consumer has the option of canceling the Agreement.</li>
       </ol>
-    </List>
-    <Content position="text-start">
       <h2>9. - warranty</h2>
-    </Content>
-    <List>
       <ol>
         <li>So Extra Nails guarantees that the Services delivered and (resulting) Products or results comply with the Agreement, the specifications stated in the offer, the reasonable requirements of reliability and/or usability and the on the date of the conclusion of the Agreement existing legal provisions and/or government regulations.</li>
         <li>The client can claim this guarantee if the defect is noticed within 72 hours after delivery and the complaint has been reported immediately after discovery of the defect and the complaint is considered well-founded by So Extra Nails. So Extra Nails will provide a suitable solution in the form of repair or compensation of a maximum of the amount paid by the Client for the relevant part of the Agreement.</li>
         <li>A guarantee provided by So Extra Nails, manufacturer or importer does not affect the legal rights and claims that the Client has under the Agreement.</li>
         <li>The warranty lapses if it appears that the Client has not followed the advice of So Extra Nails, or has not complied with the instructions for use.</li>
       </ol>
-    </List>
-    <Content position="text-start">
       <h2>10. - Intellectual property rights</h2>
-    </Content>
-    <List>
       <ol>
         <li>The Intellectual Property Rights, including all images, drawings, (technical) descriptions and advice that So Extra Nails provides to the Client, are vested in So Extra Nails.</li>
         <li>The Client will not perform any acts that may infringe the Intellectual Property Rights of So Extra Nails and/or its licensors, including but not limited to publishing and/or multiplying the information referred to in the previous paragraph in whole or in part without permission. The Client acknowledges and accepts that any unauthorized use or act infringes the Agreement and applicable law.</li>
       </ol>
-    </List>
-    <Content position="text-start">
       <h2>11. - confidentiality</h2>
-    </Content>
-    <List>
       <ol>
         <li>The parties will treat information that they provide to each other before, during or after the execution of the Agreement confidentially if this information can reasonably be regarded as confidential, or if this information has been explicitly designated as confidential by one of the Parties. The parties also impose this obligation on their Employees as well as on third parties engaged by them for the implementation of the Agreement.</li>
         <li>The obligation of confidentiality also continues after termination of the Agreement for whatever reason, and for as long as the providing party can reasonably claim the confidential nature of the information.</li>
       </ol>
-    </List>
-    <Content position="text-start">
       <h2>12. - change of terms & conditions</h2>
-    </Content>
-    <List>
       <ol>
         <li>So Extra Nails reserves the right to change or supplement these General Terms and Conditions. Changes also apply to Agreements already concluded with due observance of a term of 30 days after announcement of the change.</li>
         <li>Changes will be announced via www.soextranails.com, by e-mail to the Client, or another channel from which So Extra Nails can prove that the announcement has been sent to the Client. Non-substantive changes of minor importance can be made at any time and do not require notification.</li>
         <li>If a Consumer does not want to accept a change, the Consumer must inform So Extra Nails within 30 days of notification. So Extra Nails can then reconsider the change. If So Extra Nails does not withdraw the change, the Consumer can terminate the Agreement until the date on which the new terms and conditions take effect.</li>
       </ol>
-    </List>
-    <Content position="text-start">
       <h2>13. - Final Provisions</h2>
-    </Content>
-    <List>
       <ol>
         <li>Dutch law applies to the Agreement.</li>
         <li>Insofar as not dictated otherwise by mandatory law, all disputes that may arise as a result of the Agreement will be submitted to the competent Dutch court in the district where So Extra Nails is located.</li>
@@ -159,8 +109,6 @@
         <li>If a provision in the Agreement or General Terms and Conditions turns out to be invalid, this does not affect the validity of the entire Agreement or General Terms and Conditions. In that case, the parties will determine (a) new provision(s) as a replacement, which will give shape to the intention of the original provision as much as legally possible.</li>
         <li>So Extra Nails is entitled to transfer its rights and obligations arising from the Agreement to a third party that takes over So Extra Nails or the business activities of So Extra Nails.</li>
       </ol>
-    </List>
-    <Content position="text-start">
       <p>
         Name: So Extra Nails <br />
         Email address: info@soextranails.com

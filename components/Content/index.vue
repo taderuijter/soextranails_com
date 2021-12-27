@@ -45,22 +45,23 @@ export default {
 
     li {
       display: block;
-      margin: 0 0 25px 5px;
+      margin: 0 0 25px 45px;
       
       &::before {
-        font-family: 'HyperwaveOne';
-        display: inline-block;
-        content: counter(item);
-        counter-increment: item;
-        background-color: $black;
-        color: $white;
-        height: 30px;
-        width: 30px;
-        text-align: center;
-        line-height: 30px;
-        margin: 0 2em 0 0;
-        @include border-radius(50px);
-        @include distortion;
+          font-family: 'HyperwaveOne';
+          display: inline-block;
+          content: counter(item);
+          counter-increment: item;
+          text-align: center;
+          width: 25px;
+          height: 25px;
+          line-height: 25px;
+          font-size: 25px;
+          color: $white;
+          background-color: $black;
+          margin: 0 20px 0 -1.9em;
+          @include border-radius(50px);
+          @include distortion;
       }
     }
   }
@@ -72,8 +73,8 @@ export default {
 
     li {
       position: relative;
-      margin: 0 0 25px 0;
-      padding: 0 0 0 4em;
+      display: block;
+      margin: 0 0 25px 45px;
 
       &::before {
         content: '';
@@ -81,12 +82,12 @@ export default {
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
-        display: block;
+        display: inline-block;
         height: 45px;
         width: 45px;
         text-align: center;
         line-height: 45px;
-        left: 0;
+        margin: 0 0 0 -3.1em;
         @include vertical-align;
       }
     }
