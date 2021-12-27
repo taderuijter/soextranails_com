@@ -16,10 +16,8 @@ body
   }
 }
 
-
 @font-face {
   font-family: 'HyperwaveOne';
-  src:  url('~static/fonts/hyperwaveone.woff2') format('woff2'), 
-        url('~static/fonts/hyperwaveone.woff') format('woff'),
-        url('~static/fonts/hyperwaveone.otf') format('truetype');
+  src:  url('~static/fonts/hyperwaveone.woff2') format('woff2'), url('~static/fonts/hyperwaveone.woff') format('woff'), url('~static/fonts/hyperwaveone.otf') format('truetype');
+  font-display: swap;
 }

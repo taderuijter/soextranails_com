@@ -1,0 +1,78 @@
+<template>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+        <div class="message mb-4" :class="type">
+          <div class="row g-0 align-items-center">
+            <div class="col-12 col-md-2">
+              <img src="~assets/img/bell.svg" width="70px" height="70px" alt="" title="">
+            </div>
+            <div class="col-12 col-md-10">
+              <slot></slot>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+  export default {
+    props: {
+      type: {
+        type: String,
+        default: 'message__warning'
+      }
+    }
+  }
+</script>
+
+<style lang="scss" scoped>
+  .message {
+    padding: 30px;
+    @include border-radius(20px);
+
+    p:last-child {
+      margin: 0;
+    }
+
+    img {
+      height: 45px;
+      width: 45px;
+
+      @include md-screen {
+        height: 70px;
+        width: 70px;
+      }
+    }
+
+    &__warning {
+      background-color: #FFF3C7;
+      color:#DCB837;
+
+      img {
+        filter: invert(94%) sepia(39%) saturate(6848%) hue-rotate(327deg) brightness(91%) contrast(87%);
+      }
+    }
+
+    &__error {
+      background-color: #DF5B5B;
+      color:#811919;
+
+      img {
+        filter: invert(10%) sepia(74%) saturate(3734%) hue-rotate(352deg) brightness(99%) contrast(88%);
+      }
+    }
+
+    &__succes {
+      background-color: #CEF5D9;
+      color:#0D7C2D;
+
+      img {
+        filter: invert(32%) sepia(57%) saturate(698%) hue-rotate(85deg) brightness(101%) contrast(94%);
+      }
+    }
+
+  }
+</style>

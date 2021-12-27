@@ -1,0 +1,16 @@
+## Turn on rewrite engine
+RewriteEngine on
+
+## Force HTTPS
+RewriteCond %{HTTPS} !=on [NC]
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+SetEnvIf X-Forwarded-Proto "https" HTTPS=on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+## Force WWW
+RewriteCond %{HTTP_HOST} ^[^.]+\.com$ [NC]
+RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [NE,L,R=301]
+
+## Force Trailing-slash
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*[^/])$ /$1/ [L,R=301]

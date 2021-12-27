@@ -54,7 +54,10 @@
 
 // Background center
 @mixin background-center($url) {
-  background-image: url($url);
+
+  @if $url {
+    background-image: url($url);
+  }
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

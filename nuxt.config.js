@@ -39,6 +39,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: '~/plugins/lazysizes', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -56,16 +57,23 @@ export default {
   // https://github.com/nuxt-community/community-modules/tree/master/packages/localtunnel
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/pwa',
+    'nuxt-responsive-loader',
+    // '@nuxtjs/pwa',
     '@nuxtjs/redirect-module',
     'nuxt-webfontloader',
     '@nuxtjs/sitemap',
     '@nuxtjs/feed',
     '@nuxtjs/robots',
     '@nuxtjs/localtunnel',
-    "nuxt-imagemin",
     '@nuxtjs/i18n',
   ],
+
+  responsiveLoader: {
+    name: 'images/[name]-[width].[ext]',
+    sizes: [320, 425, 768, 1024, 1366, 1920],
+    quality: 85,
+    adapter: require('responsive-loader/sharp'),
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
@@ -76,17 +84,17 @@ export default {
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
-  pwa: {
-    meta: {
-      name: "So Extra Nails",
-      author: "Kim Kers",
-      description: "Be bold and express yourself with bespoke nail art on natural or artificial nails.",
-      theme_color: "#58EEEF",
-      lang: "en",
-      ogType: "website",
-      ogHost: "https://www.soextranails.com",
-    }
-  },
+  // pwa: {
+  //   meta: {
+  //     name: "So Extra Nails",
+  //     author: "Kim Kers",
+  //     description: "Be bold and express yourself with bespoke nail art on natural or artificial nails.",
+  //     theme_color: "#58EEEF",
+  //     lang: "en",
+  //     ogType: "website",
+  //     ogHost: "https://www.soextranails.com",
+  //   }
+  // },
 
   // Sitemap Docmentation: https://sitemap.nuxtjs.org/
   sitemap: {
@@ -116,7 +124,7 @@ export default {
 
   // Google Analytics Documentation: https://google-analytics.nuxtjs.org/
   googleAnalytics: {
-    //id: 'UA-XXX-X'
+    id: 'UA-213790316-1'
   },
 
   // Adds a redirect with trailing slash
@@ -130,7 +138,7 @@ export default {
   // Robot documentation: https://github.com/nuxt-community/robots-module
   robots: {
     UserAgent: "*",
-    Disallow: "/"
+    Allow: "/"
   },
 
   router: {
@@ -139,5 +147,11 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extend (config, { isDev, isClient, loaders: { vue } }) {
+      if (isClient) {
+        vue.transformAssetUrls.img = ['src', 'srcset', 'data-src', 'data-srcset']
+        vue.transformAssetUrls.source = ['src', 'srcset', 'data-src', 'data-srcset']
+      }
+    }
   }
 }

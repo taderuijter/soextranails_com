@@ -1,7 +1,7 @@
 <template>
 <div>
   <Navbar />
-  <Header :title="title" />
+  <Hero />
 </div>
 </template>
 
@@ -19,8 +19,14 @@
           {
             hid: 'description',
             name: 'description',
-            content: 'Be bold and express yourself with bespoke nail art on natural or artificial nails. Located in the city centre of Rotterdam and still open for new bookings! '
+            content: 'Be bold & express yourself with pronounced nail art on natural or artificial nails. New customers are welcome.'
           }
+        ],
+        link: [
+          { rel: 'canonical', href: 'https://www.soextranails.com/' },
+          { rel: 'alternate', hreflang: 'en', href: 'https://www.soextranails.com/' },
+          { rel: 'alternate', hreflang: 'nl', href: 'https://www.soextranails.nl/' },
+          { rel: 'alternate', hreflang: 'x-default', href: 'https://www.soextranails.nl/' }
         ]
       }
     }

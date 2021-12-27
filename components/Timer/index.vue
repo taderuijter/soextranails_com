@@ -1,6 +1,8 @@
 <template>
   <div class="timer">
-    <div class="timer__clock" :class="open ? 'timer__clock--open' : 'timer__clock--closed'"><img src="~/assets/img/clock.svg" width="20px" height="20px" alt="" title=""/></div>
+    <div class="timer__clock" :class="open ? 'timer__clock--open' : 'timer__clock--closed'">
+      <img data-not-lazy src="~/assets/img/clock.svg" width="20px" height="20px" alt="" title=""/>
+      </div>
     <div class="timer__content">
       <span v-if="open === true">Open today from: <br><strong>09:00 - 17:00</strong></span>
       <span v-else>Closed</span>
@@ -30,7 +32,8 @@ export default {
       const day = today.getDay();
 
       // Conditional statement changes open to true of false
-      if( day > 0 && day < 6 && time >= startTime && time <= endTime)  {
+      if( day > 0 && day < 6 && time > startTime && time < endTime)  {
+        console.log(time)
         this.open = true
       } else {
         this.open = false

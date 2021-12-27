@@ -1,7 +1,10 @@
 <template>
-  <a :href="url" class="btn" :class="styling">
+  <a v-if="type === 'href'" :href="url" class="btn" :class="styling">
     {{ label }}
   </a>
+  <button v-else class="btn" :class="styling" @click="onClick">
+    {{ label }}
+  </button>
 </template>
 
 <script>
@@ -11,6 +14,13 @@ export default {
     styling: String,
     icon: String,
     url: String,
+    type: String,
+    onClick: {
+      type: Function,
+      default: () => {
+        console.log('You have not added any function')
+      }
+    },
   }
 }
 </script>
@@ -31,14 +41,6 @@ export default {
       background-color: $black;
       color: $white;
       @include distortion;
-
-      img {
-        float: left;
-        margin: 0 8px 0 0;
-        height: 20px;
-        width: 20px;
-        filter: brightness(0) invert(1);
-      }
     }
   }
 </style>

@@ -1,5 +1,8 @@
 <template>
-  <div class="header skeleton">
+  <div class="header">
+    <div class="header__background skeleton">
+      <Picture :src="require('~/assets/img/soextranails-bg.jpg')" :webp="require('~/assets/img/soextranails-bg.jpg?format=webp')" styling="header__image lazyload" alt="" width="640px" height="360px" />
+    </div>
     <Heading class="title">
       <h1 class="heading__black heading__distortion">{{ title }}</h1>
     </Heading>
@@ -14,22 +17,27 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .header {
-  height: 20vh;
   position: relative;
-  @include background-center('~/assets/img/soextranails-bg.jpg');
-  @include border-radius-top(50px);
 
-  @include sm-screen {
-    height: 30vh;
-  }
+  &__background {
+    position: relative;
+    overflow: hidden;
+    height: 20vh;
+    @include border-radius-top(50px);
 
-  @include lg-screen {
-    height: 50vh;
+    @include sm-screen {
+      height: 30vh;
+    }
+
+    @include lg-screen {
+      height: 50vh;
+    }
   }
 
   .title {
+    z-index: 5;
     width: 200px;
     text-align: center;
     position: absolute;
@@ -42,6 +50,17 @@ export default {
 
     @include lg-screen {
       width: 500px;
+    }
+  }
+
+  &__image {
+    width: auto;
+    height: 100%;
+    @include center-align;
+
+    @include custom-screen(1690px) {
+      width: 100%;
+      height: 100%;
     }
   }
 }

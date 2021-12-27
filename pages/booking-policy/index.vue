@@ -49,12 +49,17 @@
     <List>
       <ul>
         <li>The warranty covers repairing or restoring a broken or chipped nail free of charge. </li>
-        <li>But only if the nail(s) is damaged by normal use and within 72 hours after your appointment.</li>
+        <li>But only if the nail(s) is damaged by normal use and within 72 hours after your appointment. Normal use is understood to mean:</li>
+        <ol>
+          <li>Not using your nails as tools (opening cans, scraping stickers, opening key rings, etc.)</li>
+          <li>Taking care of your manicure as So Extra Nails advises</li>
+          <li>Protecting your manicure from damage caused by external factors by e.g. wearing gloves e.g.</li>
+        </ol>
         <li>After a fix has been carried out on the basis of the stipulated warranty, no further claims can be made under the warranty and normal costs apply.</li>
       </ul>
     </List>
     <Content>
-      <h2>bOOKING & visits</h2>
+      <h2>Booking & visits</h2>
       <p>Make sure you have booked the <span>correct treatment(s)</span>. If you are not sure what to book, please inform So Extra Nails.</p>
       <p><span>Please take note:</span></p>
     </Content>
@@ -63,7 +68,7 @@
         <li>Make sure to always book product removal in combination with your treatment if you’re a returning Natural Nail or Aprés Gel X customer, OR if you already have(gel) product on your nails.</li>
         <li>Book as accurate as possible otherwise there might be a chance So Extra Nails can’t perform all desired treatments. But don't book too much unnecessary time either as it takes up a spot for a potential customer.</li>
         <li>Show up on time! Not too late, but also not more than 5 minutes too early. Every minute late will be taken from your total treatment time.</li>
-        <li>If you have not arrived after 30 minutes, your appointment will be canceled and the no-show policy applies.</li>
+        <li>If you have not arrived after 15 minutes, your appointment will be canceled and the no-show policy applies.</li>
       </ul>
     </List>
     <Content>
@@ -89,13 +94,19 @@
     },
     head() {
       return {
-        title: 'So Extra Nails 💅 Booking Policy • Must Read before your appointment',
+        title: 'So Extra Nails 💅 Booking Policy • Read before you book!',
         meta: [
           {
             hid: 'description',
             name: 'description',
-            content: 'Before you book it’s important that you inform yourself with So Extra Nails’ booking policy. By booking an appointment you agree to the booking policy as stated below.'
+            content: 'By booking, you agree to the booking policy. You are enabled to make cancellations up to 48h and changes up to 24h prior to your booking free of charge.'
           }
+        ],
+        link: [
+          { rel: 'canonical', href: 'https://www.soextranails.com/booking-policy/' },
+          { rel: 'alternate', hreflang: 'en', href: 'https://www.soextranails.com/booking-policy/' },
+          { rel: 'alternate', hreflang: 'nl', href: 'https://www.soextranails.nl/afspraak-beleid/' },
+          { rel: 'alternate', hreflang: 'x-default', href: 'https://www.soextranails.nl/afspraak-beleid/' }
         ]
       }
     }

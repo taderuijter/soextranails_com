@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>undefined</title>
+        <link>undefined</link>
+        <description>undefined</description>
+        <lastBuildDate>Sun, 26 Dec 2021 13:40:39 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/nuxt-community/feed-module</generator>
+    </channel>
+</rss>
