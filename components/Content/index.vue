@@ -1,9 +1,9 @@
 <template>
-<div class="content">
+<div class="content" v-editable="blok" :class="[blok.margin_bottom, blok.margin_top]">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-12 col-md-10 col-lg-8 col-xl-6" :class="position">
-        <slot></slot>
+      <div class="col-12 col-md-10 col-lg-8" :class="blok.styling">
+        <rich-text-renderer :document="blok.text" />
       </div>
     </div>
   </div>
@@ -13,15 +13,15 @@
 <script>
 export default {
   props: {
-    position: {
-      type: String,
-      default: 'text-center'
-    }
+      blok: {
+        type: Object,
+        required: true
+      }
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .content {
   h2,h3,h4,h5,h6 {
     font-size: 22px;
@@ -36,61 +36,6 @@ export default {
 
   span {
     font-weight: 700;
-  }
-
-  ol {
-    counter-reset: item;
-    margin: 0;
-    padding: 0;
-
-    li {
-      display: block;
-      margin: 0 0 25px 45px;
-      
-      &::before {
-          font-family: 'HyperwaveOne';
-          display: inline-block;
-          content: counter(item);
-          counter-increment: item;
-          text-align: center;
-          width: 25px;
-          height: 25px;
-          line-height: 25px;
-          font-size: 25px;
-          color: $white;
-          background-color: $black;
-          margin: 0 20px 0 -1.9em;
-          @include border-radius(50px);
-          @include distortion;
-      }
-    }
-  }
-
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    li {
-      position: relative;
-      display: block;
-      margin: 0 0 25px 45px;
-
-      &::before {
-        content: '';
-        background-image: url('~/assets/img/hearth.svg');
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-        display: inline-block;
-        height: 45px;
-        width: 45px;
-        text-align: center;
-        line-height: 45px;
-        margin: 0 0 0 -3.1em;
-        @include vertical-align;
-      }
-    }
   }
 }
 </style>

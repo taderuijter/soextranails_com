@@ -1,28 +1,34 @@
 <template>
-<div class="hero skeleton">
+<div v-editable="blok" class="hero skeleton">
   <div class="circle">
     <div class="content text-center">
       <Heading>
-        <h1 class="heading__black heading__distortion">beyond nails</h1>
+        <h1 class="heading__black heading__distortion">{{ blok.title }}</h1>
       </Heading>
-      <p>Be bold and express yourself with bespoke nail art on natural or artificial nails. Located in the city centre of Rotterdam and still open for new bookings! </p>
+      <p>{{ blok.text }}</p>
+      <Button v-if="blok.btn_enable === true" type="href" :label="blok.btn_text" :url="blok.btn_url" styling="btn__primary" />
     </div>
   </div>
   <div class="image image--left">
-    <Picture styling="lazyload" :src="require('~/assets/img/nailart-1.jpg')" :webp="require('~/assets/img/nailart-1.jpg?format=webp')" width="360px" height="360px" />
+    <img :src="blok.image_left.filename" class="lazyload" width="360px" height="360px" :alt="blok.image_left.alt" :title="blok.image_left.alt" />
   </div>
   <div class="image image--right">
-    <Picture styling="lazyload" :src="require('~/assets/img/nailart-2.jpg')" :webp="require('~/assets/img/nailart-2.jpg?format=webp')" width="360px" height="360px"/>
+    <img :src="blok.image_right.filename" class="lazyload" width="360px" height="360px" :alt="blok.image_right.alt" :title="blok.image_right.alt" />
   </div>
   <div class="bg-image">
-    <Picture styling="lazyload" :src="require('~/assets/img/soextranails-bg.jpg')" :webp="require('~/assets/img/soextranails-bg.jpg?format=webp')" width="360px" height="360px"/>
+    <img :src="blok.image_big.filename" class="lazyload" width="360px" height="360px" :alt="blok.image_big.alt" :title="blok.image_big.alt" />
   </div>
 </div>
 </template>
 
 <script>
 export default {
-    
+  props: {
+    blok: {
+      type: Object,
+      required: true
+    }
+  }
 }
 </script>
 
@@ -84,46 +90,11 @@ export default {
     }
 
     @include md-screen {
-      width: 350px;
+      width: 420px;
     }
 
     p {
       margin: 25px 0;
-    }
-
-    &::after {
-      display: block;
-      content: '';
-      height: 45px;
-      width: 80px;
-      bottom: -44px;
-      background-image: url('~/assets/img/droplets.png');
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-      @include horizontal-align;
-
-      @include sm-screen {
-        height: 80px;
-        width: 80px;
-        bottom: -124px;
-      }
-
-      @include md-screen {
-        height: 80px;
-        width: 80px;
-        bottom: -160px;
-      }
-
-      @include lg-screen {
-        height: 150px;
-        width: 150px;
-        bottom: -242px;
-      }
-
-      @include xl-screen {
-        bottom: -260px;
-      }
     }
   }
 

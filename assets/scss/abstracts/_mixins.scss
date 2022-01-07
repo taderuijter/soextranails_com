@@ -108,3 +108,11 @@
   -webkit-box-shadow: none, none; 
   box-shadow: none, none;
 }
+
+@mixin responsive-div($value) {
+  &:after {
+    content: "";
+    display: block;
+    padding-bottom: $value;
+  }
+}

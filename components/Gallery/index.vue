@@ -1,10 +1,10 @@
 <template>
-<div class="gallery">
+<div class="gallery" v-editable="blok" :class="[blok.margin_bottom, blok.margin_top]">
   <div class="container">
     <div class="row">
-      <div v-for="image in images" :key="image.id" :class="image.id === 1 ? 'col-12 col-md-12' : 'col-12 col-md-6' ">
+      <div v-for="image in blok.items" :key="image._uid" :class="image.component === 'big_image' ? 'col-12' : 'col-12 col-md-6' ">
         <div class="gallery__image">
-          <img :data-src="image.url" styling="lazyload" :alt="image.alt" class="lazyload" width="640px" height="360px" />
+          <img :src="image.image.filename" styling="lazyload" :alt="image.image.alt" class="lazyload" width="640px" height="360px" />
         </div>
       </div>
     </div>
@@ -14,27 +14,12 @@
 
 <script>
   export default {
-    data(){
-      return {
-        images: [
-          {
-            id: 1,
-            url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1wNZB3owQeKWWD3spXTPi8u9p4Yi6D8LxuQ&usqp=CAU',
-            alt: 'Frenchie 1'
-          },
-          {
-            id: 2,
-            url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_jZlAO8GUmIR2kfjEu7MhVLGv-e6mjCUx5g&usqp=CAU',
-            alt: 'Frenchie 2'
-          },
-          {
-            id: 3,
-            url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_jZlAO8GUmIR2kfjEu7MhVLGv-e6mjCUx5g&usqp=CAU',
-            alt: 'Frenchie 3'
-          }
-        ]
-      }
-    },
+  props: {
+    blok: {
+      type: Object,
+      required: true
+    }
+  }
   }
 </script>
 

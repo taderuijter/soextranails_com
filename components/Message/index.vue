@@ -1,14 +1,15 @@
 <template>
-  <div class="container">
+  <div class="container" v-editable="blok" :class="[blok.margin_bottom, blok.margin_top]">
     <div class="row justify-content-center">
-      <div class="col-12 col-md-10 col-lg-8 col-xl-6">
-        <div class="message mb-4" :class="type">
+      <div class="col-12 col-md-10 col-lg-8">
+        <div class="message" :class="blok.styling">
           <div class="row g-0 align-items-center">
             <div class="col-12 col-md-2">
-              <img src="~assets/img/bell.svg" width="70px" height="70px" alt="" title="">
+              <img v-if="blok.image.filename" :src="blok.image.filename" width="70px" height="70px" alt="" title="">
+              <img v-else src="~assets/img/bell.svg" width="70px" height="70px" alt="" title="">
             </div>
             <div class="col-12 col-md-10">
-              <slot></slot>
+              {{ blok.text }}
             </div>
           </div>
         </div>
@@ -20,9 +21,9 @@
 <script>
   export default {
     props: {
-      type: {
-        type: String,
-        default: 'message__warning'
+      blok: {
+        type: Object,
+        required: true
       }
     }
   }

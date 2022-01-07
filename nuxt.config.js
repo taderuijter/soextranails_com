@@ -39,7 +39,10 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/lazysizes', mode: 'client' }
+    { src: '~/plugins/lazysizes', mode: 'client' },
+    { src: '~/plugins/axe.js', mode: 'client' },
+    '~/plugins/composition-api.js',
+    '~/plugins/storyblok-rich-text-renderer.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -66,6 +69,13 @@ export default {
     '@nuxtjs/robots',
     '@nuxtjs/localtunnel',
     '@nuxtjs/i18n',
+    [
+      'storyblok-nuxt',
+      {
+        accessToken: 'EnZJYpQOCQQXRQrZqIkHBQtt',
+        cacheProvider: 'memory'
+      }
+    ],
   ],
 
   responsiveLoader: {
@@ -153,5 +163,9 @@ export default {
         vue.transformAssetUrls.source = ['src', 'srcset', 'data-src', 'data-srcset']
       }
     }
+  },
+
+  server: {
+    port: 3010 // default: 3000
   }
 }

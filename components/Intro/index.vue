@@ -1,9 +1,9 @@
 <template>
-<div class="intro">
+<div class="intro mb-5" v-editable="blok">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-12 col-md-10 col-lg-8 col-xl-6 text-center">
-        <slot></slot>
+      <div class="col-12 col-md-10 col-lg-8 text-center">
+        <rich-text-renderer :document="blok.text" />
       </div>
     </div>
   </div>
@@ -13,7 +13,10 @@
 <script>
 export default {
   props: {
-    content: String
+    blok: {
+      type: Object,
+      required: true
+    }
   }
 }
 </script>
@@ -23,7 +26,7 @@ export default {
   padding: 90px 0 0 0;
 
   @include sm-screen {
-    padding: 90px 0 25px 0;
+    padding: 90px 0 0 0;
   }
 
   p {

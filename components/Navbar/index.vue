@@ -9,6 +9,7 @@
     <ul>
       <li><nuxt-link to="/">Home</nuxt-link></li>
       <li><nuxt-link to="/booking-policy/">Booking Policy</nuxt-link></li>
+      <li><nuxt-link to="/demo/">Demo</nuxt-link></li>
     </ul>
   </div>
   <div class="navbar__brand">

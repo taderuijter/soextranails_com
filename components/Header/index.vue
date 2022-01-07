@@ -1,10 +1,12 @@
 <template>
-  <div class="header">
+  <div class="header" v-editable="blok">
     <div class="header__background skeleton">
-      <Picture :src="require('~/assets/img/soextranails-bg.jpg')" :webp="require('~/assets/img/soextranails-bg.jpg?format=webp')" styling="header__image lazyload" alt="" width="640px" height="360px" />
+      <img v-if="blok.image.filename" :src="blok.image.filename" alt="" title="" width="640px" height="480px" />
+      <Picture v-else :src="require('~/assets/img/soextranails-bg.jpg')" :webp="require('~/assets/img/soextranails-bg.jpg?format=webp')" styling="header__image lazyload" alt="" width="640px" height="360px" />
     </div>
     <Heading class="title">
-      <h1 class="heading__black heading__distortion">{{ title }}</h1>
+      <h1 v-if="blok.title" class="heading__black heading__distortion">{{ blok.title }}</h1>
+      <h1 v-else class="heading__black heading__distortion">{{ title }}</h1>
     </Heading>
   </div>
 </template>
@@ -12,7 +14,14 @@
 <script>
 export default {
   props: {
-    title: String
+    title: {
+      type: String,
+      default: 'Add a title'
+    },
+    blok: {
+      type: Object,
+      required: true
+    }
   }
 }
 </script>

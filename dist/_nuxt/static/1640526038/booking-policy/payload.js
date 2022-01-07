@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/booking-policy", {data:[{}],fetch:{},mutations:void 0});

@@ -33,7 +33,6 @@ export default {
 
       // Conditional statement changes open to true of false
       if( day > 0 && day < 6 && time > startTime && time < endTime)  {
-        console.log(time)
         this.open = true
       } else {
         this.open = false

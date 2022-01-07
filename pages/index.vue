@@ -1,25 +1,66 @@
 <template>
-<div>
-  <Navbar />
-  <Hero />
-</div>
+  <div>
+    <section v-for="blok in story.content.body" :key="blok._uid">
+      <component v-if="blok.component" :blok="blok" :is="blok.component" />
+    </section>
+  </div>
 </template>
 
 <script>
   export default {
     data() {
       return {
-        title: 'Nagelstudio Rotterdam'
+        story: { content: {} }
       }
     },
+
+  mounted () {
+    this.$storybridge(() => {
+      const storyblokInstance = new StoryblokBridge()
+
+      // Use the input event for instant update of content
+      storyblokInstance.on('input', (event) => {
+        console.log(this.story.content)
+        if (event.story.id === this.story.id) {
+          this.story.content = event.story.content
+        }
+      })
+
+      // Use the bridge to listen the events
+      storyblokInstance.on(['published', 'change'], (event) => {
+        // window.location.reload()
+        this.$nuxt.$router.go({
+          path: this.$nuxt.$router.currentRoute,
+          force: true,
+        })
+      })
+    })
+  },
+
+    asyncData (context) {
+      return context.app.$storyapi.get('cdn/stories/home', {
+        version: 'draft'
+      }).then((res) => {
+        return res.data
+      }).catch((res) => {
+        if (!res.response) {
+          console.error(res)
+          context.error({ statusCode: 404, message: 'Failed to receive content form api' })
+        } else {
+          console.error(res.response.data)
+          context.error({ statusCode: res.response.status, message: res.response.data })
+        }
+      })
+    },
+
     head() {
       return {
-        title: 'So Extra Nails 💅 Nail Art Rotterdam • BIAB™, Extensions & more',
+        title: this.story.content.seo_title,
         meta: [
           {
             hid: 'description',
             name: 'description',
-            content: 'Be bold & express yourself with pronounced nail art on natural or artificial nails. New customers are welcome.'
+            content: this.story.content.seo_description
           }
         ],
         link: [
