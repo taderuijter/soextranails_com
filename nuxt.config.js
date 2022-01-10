@@ -32,11 +32,6 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ["@/assets/scss/style.scss"],
 
-  // Storybook Documentation: https://storybook.nuxtjs.org/
-  storybook: {
-    // Options
-  },
-
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~/plugins/lazysizes', mode: 'client' },
@@ -67,7 +62,6 @@ export default {
     '@nuxtjs/sitemap',
     '@nuxtjs/feed',
     '@nuxtjs/robots',
-    '@nuxtjs/localtunnel',
     '@nuxtjs/i18n',
     [
       'storyblok-nuxt',
@@ -163,9 +157,5 @@ export default {
         vue.transformAssetUrls.source = ['src', 'srcset', 'data-src', 'data-srcset']
       }
     }
-  },
-
-  server: {
-    port: 3010 // default: 3000
   }
 }

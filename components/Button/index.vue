@@ -42,5 +42,18 @@ export default {
       color: $white;
       @include distortion;
     }
+
+    &__full {
+      width: 100%;
+    }
+
+    &__transparant {
+      background-color: transparent;
+      color: lighten($black, 60%);
+
+      &:hover {
+        color: $black;
+      }
+    }
   }
 </style>
