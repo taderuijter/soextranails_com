@@ -7,16 +7,17 @@
       </div>
     </div>
   </div>
+
   <div class="container" itemscope itemtype="https://schema.org/FAQPage">
     <div class="row justify-content-center">
       <div class="col-12 col-md-10 col-lg-8">
-      <div v-for="(faq, index) in blok.items" :key="index" >
+      <div v-for="(faq, index) in sortedFaq" :key="index" >
         <div v-if="index === 0">
           <div class="faq faq__open" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" :data-character-id="index">
             <div class="faq__heading" @click="selectedFAQ(index)">
               <div class="row g-0 align-items-center">
                 <div class="col-11">
-                  <h3>{{ faq.question }}</h3>
+                  <h3>{{ faq.content.question }}</h3>
                 </div>
                 <div class="col-1">
                   <div class="faq__icon mr-auto">
@@ -27,7 +28,7 @@
             </div>
             <div class="faq__body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                {{ faq.awnser }}
+                {{ faq.content.awnser }}
               </div>
             </div>
           </div>
@@ -37,7 +38,7 @@
             <div class="faq__heading" @click="selectedFAQ(index)">
               <div class="row g-0 align-items-center">
                 <div class="col-11">
-                  <h3>{{ faq.question }}</h3>
+                  <h3>{{ faq.content.question }}</h3>
                 </div>
                 <div class="col-1">
                   <div class="faq__icon ml-auto">
@@ -48,7 +49,7 @@
             </div>
             <div class="faq__body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                {{ faq.awnser }}
+                {{ faq.content.awnser }}
               </div>
             </div>
           </div>
@@ -85,6 +86,22 @@ export default {
         faqMessage.classList.remove('faq__open')
         faqMessage.classList.add('faq__closed')
       }
+    }
+  },
+
+  computed: {
+    sortedFaq() {
+      // Load reference data/content from store
+      const featuredFaq = this.$store.state.faq.faq.filter((faq) => {
+        return this.blok.items.includes(faq.uuid)
+      })
+
+      // Enable the ordering of the article previews
+      featuredFaq.sort((a, b) => {
+        return this.blok.items.indexOf(a.uuid) - this.blok.items.indexOf(b.uuid);
+      })
+
+      return featuredFaq
     }
   }
 }

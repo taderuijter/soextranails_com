@@ -2,12 +2,14 @@
   <div class="container usp" v-editable="blok" :class="[blok.margin_bottom, blok.margin_top]">
     
     <div v-if="blok.layout === 'small'" class="row justify-content-center">
-      <div class="col-12 col-md-10 text-center">
-        <ul>
-          <li v-for="usp in blok.items" :key="usp._uid">
-            {{ usp.item }}
-          </li>
-        </ul>
+      <div class="col-12 col-lg-10 text-center">
+        <div class="row g-0">
+          <div class="col-12 col-md-4" v-for="usp in blok.items" :key="usp._uid">
+            <div class="usp__item">
+              <img src="~/assets/img/hearth.svg" alt="" title="" width="45px" height="45px" />{{ usp.item }}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -59,33 +61,13 @@
       margin: 0;
     }
 
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
+    &__item {
+      line-height: 45px;
+      font-weight: 600;
+      text-transform: uppercase;
 
-      li {
-        display: inline;
-        position: relative;
-        margin: 0 0 25px 0;
-        padding: 0 4em;
-        font-weight: 600;
-        text-transform: uppercase;
-
-        &::before {
-          content: '';
-          background-image: url('~/assets/img/hearth.svg');
-          background-size: contain;
-          background-position: center;
-          background-repeat: no-repeat;
-          display: block;
-          height: 65px;
-          width: 65px;
-          text-align: center;
-          line-height: 65px;
-          left: 0;
-          @include vertical-align;
-        }
+      img {
+        margin: 0 5px 0 0;
       }
     }
   }

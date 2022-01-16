@@ -132,12 +132,12 @@ export default {
   },
 
   // Adds a redirect with trailing slash
-  redirect: [
-    {
-        from: '^.*(?<!\/)$',
-        to: (from, req) => req.url + '/'
-    }
-  ],
+  // redirect: [
+  //   {
+  //       from: '^.*(?<!\/)$',
+  //       to: (from, req) => req.url + '/'
+  //   }
+  // ],
 
   // Robot documentation: https://github.com/nuxt-community/robots-module
   robots: {
@@ -146,7 +146,7 @@ export default {
   },
 
   router: {
-    trailingSlash: true,
+    // trailingSlash: true,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -157,5 +157,5 @@ export default {
         vue.transformAssetUrls.source = ['src', 'srcset', 'data-src', 'data-srcset']
       }
     }
-  }
+  },
 }

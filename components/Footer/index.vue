@@ -9,11 +9,13 @@
       </div>
       <div class="col-12 col-md-6 footer__ontop text-center">
         <ul class="footer__menu">
-          <li><nuxt-link to="/terms-and-conditions/">Terms & Conditions</nuxt-link></li>
+          <li v-for="(link, index) in links" :key="index">
+            <nuxt-link :to="link.url"> {{ link.name }} </nuxt-link>
+          </li>
         </ul>
       </div>
       <div class="col-12 col-md-3 text-center text-md-end footer__ontop">
-        <Socials />
+        <Socials :facebook="facebook" :linkedin="linkedin" :instagram="instagram" :pinterest="pinterest" />
       </div>
     </div>
   </div>
@@ -23,7 +25,15 @@
 
 <script>
 export default {
-    
+    data(){
+      return {
+        links: this.$store.state.footer.footer.content.links,
+        facebook: this.$store.state.footer.footer.content.facebook,
+        linkedin: this.$store.state.footer.footer.content.linkedin,
+        instagram: this.$store.state.footer.footer.content.instagram,
+        pinterest: this.$store.state.footer.footer.content.pinterest,
+      }
+    }
 }
 </script>
 

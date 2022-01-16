@@ -54,6 +54,24 @@
       width: 80%;
       text-align: center;
       @include center-align;
+
+      p {
+        font-size: 52px !important;
+
+        @include md-screen {
+          font-size: 120px !important;
+        }
+
+        @include lg-screen {
+          font-size: 142px !important;
+          line-height: 92px !important;
+        }
+
+        @include xl-screen {
+          font-size: 280px !important;
+          line-height: 140px !important;
+        }
+      }
     }
   }
 

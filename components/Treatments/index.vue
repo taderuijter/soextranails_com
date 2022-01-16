@@ -2,34 +2,32 @@
   <div class="treatments" v-editable="blok" :class="[blok.margin_bottom, blok.margin_top]">
     <div class="container">
       <div class="row">
-
-        <div v-for="treatment in blok.items" :key="treatment._uid" class="col-12 col-md-6 col-lg-4">
+        <div v-for="treatment in sortedService" :key="treatment._uid" class="col-12 col-md-6 col-lg-4">
           <div class="treatment__item">
             <div class="treatment__image">
-              <img v-if="treatment.image" :src="treatment.image.filename" class="lazyload img-fluid" alt="" title="" width="640px" height="480px" />
+              <img v-if="treatment.content.srv_image.filename" :src="treatment.content.srv_image.filename" class="lazyload img-fluid" alt="" title="" width="640px" height="480px" />
             </div>
             <div class="treatment__content">
               <p class="title">
-                {{ treatment.title }}
+                {{ treatment.content.srv_title }}
               </p>
               <p class="text">
-                {{ treatment.text }}
+                {{ treatment.content.srv_text }}
               </p>
             </div>
             <div class="treatment__usp">
               <ul>
-                <li v-for="(usp, index) in treatment.items" :key="index">
+                <li v-for="(usp, index) in treatment.content.srv_usp" :key="index">
                   <span>{{ usp.item }}</span>
                 </li>
               </ul>
             </div>
             <div class="treatment__buttons text-center">
-              <Button type="href" :label="treatment.btn_text" :url="treatment.btn_url" styling="btn__primary mb-2 btn__full" />
-              <Button type="href" :label="treatment.sub_text" :url="treatment.sub_url" styling="btn__transparant btn__full" />
+              <Button type="href" :label="treatment.content.srv_booknow_text" :url="treatment.content.srv_booknow_url" styling="btn__primary mb-2 btn__full" />
+              <Button type="href" :label="treatment.content.srv_readmore_text" :url="treatment.content.srv_readmore_url" styling="btn__transparant btn__full" />
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -42,6 +40,22 @@ export default {
       type: Object,
       required: true
     }
+  },
+
+  computed: {
+    sortedService() {
+      // Load reference data/content from store
+      const featuredService = this.$store.state.service.service.filter((service) => {
+        return this.blok.items.includes(service.uuid)
+      })
+
+      // Enable the ordering of the article previews
+      featuredService.sort((a, b) => {
+        return this.blok.items.indexOf(a.uuid) - this.blok.items.indexOf(b.uuid);
+      })
+
+      return featuredService
+    }
   }
 }
 </script>
@@ -52,6 +66,7 @@ export default {
     .treatment__item {
       overflow: hidden;
       border: 3px solid $black;
+      margin: 0 0 25px 0;
       @include border-radius(20px);
     }
 
@@ -87,13 +102,21 @@ export default {
 
       .text {
         line-height: 18px;
-        min-height: 90px;
+        min-height: auto;
+
+        @include md-screen {
+          min-height: 90px;
+        }
       }
     }
 
     .treatment__usp {
       padding: 0 25px;
-      min-height: 210px;
+      min-height: auto;
+
+      @include md-screen {
+        min-height: 210px;
+      }
 
       ul {
         margin: 0;

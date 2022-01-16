@@ -18,13 +18,13 @@ export default {
 .heading {
   h1,h2,h3,h4,h5,h6,p,span {
     font-family: 'HyperwaveOne';
-    font-size: 82px;
+    font-size: 62px;
     font-weight: 400 !important;
-    line-height: 48px;
+    line-height: 32px;
 
     @include sm-screen {
-      font-size: 120px;
-      line-height: 60px;
+      font-size: 82px;
+      line-height: 48px;
     }
 
     @include md-screen {

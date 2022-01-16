@@ -2,7 +2,7 @@
 <div class="list" v-editable="blok" :class="[blok.margin_bottom, blok.margin_top]">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-12 col-md-8">
+      <div class="col-12 col-md-10 col-lg-8">
         <ol>
           <li v-for="li in blok.items" :key="li._uidd">
             {{ li.item }}

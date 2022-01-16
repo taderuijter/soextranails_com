@@ -5,10 +5,10 @@
     </section>
   </div>
 </template>
-
+ 
 <script>
 export default {
-  data() {
+  data () {
     return {
       story: { content: {} }
     }
@@ -17,7 +17,7 @@ export default {
   mounted () {
     this.$storybridge(() => {
       const storyblokInstance = new StoryblokBridge()
-
+ 
       // Use the input event for instant update of content
       storyblokInstance.on('input', (event) => {
         console.log(this.story.content)
@@ -25,7 +25,7 @@ export default {
           this.story.content = event.story.content
         }
       })
-
+ 
       // Use the bridge to listen the events
       storyblokInstance.on(['published', 'change'], (event) => {
         // window.location.reload()
@@ -37,10 +37,11 @@ export default {
     })
   },
 
-  // Get the data from the api
+  // Get data from API
   asyncData (context) {
-    return context.app.$storyapi.get('cdn/stories/home', {
-      version: 'draft'
+    let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
+    return context.app.$storyapi.get(`cdn/stories/${context.params.pages}`, {
+      version: version
     }).then((res) => {
       return res.data
     }).catch((res) => {
@@ -115,7 +116,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

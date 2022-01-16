@@ -1,5 +1,5 @@
 <template>
-<div class="intro mb-5" v-editable="blok">
+<div class="intro" v-editable="blok" :class="[blok.margin_bottom, blok.margin_top]">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 col-md-10 col-lg-8 text-center">
@@ -23,10 +23,11 @@ export default {
 
 <style lang="scss" scoped>
 .intro {
-  padding: 90px 0 0 0;
-
-  @include sm-screen {
-    padding: 90px 0 0 0;
+    h2,h3,h4,h5,h6 {
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 15px 0 25px 0;
   }
 
   p {

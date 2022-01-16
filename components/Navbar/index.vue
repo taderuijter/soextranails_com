@@ -7,7 +7,9 @@
   </button>
   <div class="navbar__list" :class="{ 'navbar__list--active' : mobileMenu }">
     <ul>
-      <li><nuxt-link to="/">Home</nuxt-link></li>
+      <li v-for="(link, index) in navbar" :key="index">
+        <nuxt-link :to="link.url"> {{ link.name }} </nuxt-link>
+      </li>
     </ul>
   </div>
   <div class="navbar__brand">
@@ -15,7 +17,7 @@
   </div>
   <div class="navbar__cta">
     <Timer />
-    <Button type="href" label="Book Now" url="https://so-extra-nails.salonized.com/widget_bookings/new" styling="btn__primary" />
+    <Button type="href" :label="btnTxt" :url="btnUrl" styling="btn__primary" />
   </div>
 </div>
 </template>
@@ -25,6 +27,9 @@ export default {
     data(){
       return {
         mobileMenu: false,
+        navbar: this.$store.state.navbar.navbar.content.links,
+        btnTxt: this.$store.state.navbar.navbar.content.cta_btn_name,
+        btnUrl: this.$store.state.navbar.navbar.content.cta_btn_url
       }
     },
     methods: {

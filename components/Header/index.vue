@@ -1,14 +1,32 @@
 <template>
-  <div class="header" v-editable="blok">
+<div>
+  <div v-if="blok" class="header" v-editable="blok">
     <div class="header__background skeleton">
-      <img v-if="blok.image.filename" :src="blok.image.filename" alt="" title="" width="640px" height="480px" />
+      <img v-if="blok.image.filename" :src="blok.image.filename" alt="" title="" width="640px" height="480px" class="header__image" />
       <Picture v-else :src="require('~/assets/img/soextranails-bg.jpg')" :webp="require('~/assets/img/soextranails-bg.jpg?format=webp')" styling="header__image lazyload" alt="" width="640px" height="360px" />
     </div>
-    <Heading class="title">
-      <h1 v-if="blok.title" class="heading__black heading__distortion">{{ blok.title }}</h1>
-      <h1 v-else class="heading__black heading__distortion">{{ title }}</h1>
-    </Heading>
+    <div class="row g-0 justify-content-center title text-center">
+      <div class="col-12 col-md-10 col-lg-8">
+        <Heading>
+          <h1 class="heading__black heading__distortion">{{ blok.title }}</h1>
+        </Heading>
+      </div>
+    </div>
   </div>
+
+  <div v-else class="header">
+    <div class="header__background skeleton">
+      <Picture :src="require('~/assets/img/soextranails-bg.jpg')" :webp="require('~/assets/img/soextranails-bg.jpg?format=webp')" styling="header__image lazyload" alt="" width="640px" height="360px" />
+    </div>
+    <div class="row g-0 justify-content-center title text-center">
+      <div class="col-12 col-md-10 col-lg-8">
+        <Heading>
+          <h1 class="heading__black heading__distortion">{{ title }}</h1>
+        </Heading>
+      </div>
+    </div>
+  </div>
+</div>
 </template>
 
 <script>
@@ -20,7 +38,7 @@ export default {
     },
     blok: {
       type: Object,
-      required: true
+      required: false
     }
   }
 }
@@ -46,19 +64,16 @@ export default {
   }
 
   .title {
-    z-index: 5;
-    width: 200px;
-    text-align: center;
-    position: absolute;
-    bottom: -60px;
-    @include horizontal-align;
+    position: relative;
+    z-index: 3;
+    top: -30px;
 
     @include sm-screen {
-      width: 300px;
+      top: -50px;
     }
 
-    @include lg-screen {
-      width: 500px;
+    @include md-screen {
+      top: -70px;
     }
   }
 
@@ -67,9 +82,19 @@ export default {
     height: 100%;
     @include center-align;
 
-    @include custom-screen(1690px) {
+    @include md-screen {
       width: 100%;
+      height: auto;
+    }
+
+    @include lg-screen {
+      width: auto;
       height: 100%;
+    }
+
+    @include xl-screen {
+      width: 100%;
+      height: auto;
     }
   }
 }

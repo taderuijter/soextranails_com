@@ -47,6 +47,11 @@
 
 <style lang="scss" scoped>
   .coupon {
+    text-align: center;
+
+    @include lg-screen {
+      text-align: left;
+    }
 
     &__item {
       position: relative;

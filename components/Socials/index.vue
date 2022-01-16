@@ -1,15 +1,22 @@
 <template>
   <div class="socials">
     <ul>
-      <li><a href="https://www.instagram.com/so.extra.nails/" rel="nofollow" target="_blank"><img src="~/assets/img/instagram.svg" width="20px" height="20px" alt="" title=""></a></li>
-      <li><a href="https://nl.pinterest.com/0isxt5ovp002e0sxiqazdbm7o7fbv8/" rel="nofollow" target="_blank"><img src="~/assets/img/pinterest.svg" width="20px" height="20px" alt="" title=""></a></li>
+      <li v-if="facebook"><a :href="facebook" rel="nofollow" target="_blank"><img src="~/assets/img/instagram.svg" width="20px" height="20px" alt="" title=""></a></li>
+      <li v-if="linkedin"><a :href="linkedin" rel="nofollow" target="_blank"><img src="~/assets/img/instagram.svg" width="20px" height="20px" alt="" title=""></a></li>
+      <li v-if="instagram"><a :href="instagram" rel="nofollow" target="_blank"><img src="~/assets/img/instagram.svg" width="20px" height="20px" alt="" title=""></a></li>
+      <li v-if="pinterest"><a :href="pinterest" rel="nofollow" target="_blank"><img src="~/assets/img/pinterest.svg" width="20px" height="20px" alt="" title=""></a></li>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
-    
+  props: {
+    facebook: String,
+    linkedin: String,
+    instagram: String,
+    pinterest: String,
+  }
 }
 </script>
 

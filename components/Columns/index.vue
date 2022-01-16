@@ -31,11 +31,11 @@ export default {
     font-size: 22px;
     text-transform: uppercase;
     font-weight: 700;
-    margin: 0 0 10px 0;
+    margin: 0 0 15px 0;
   }
 
   p {
-    font-size: 20px;
+    margin: 0 0 25px 0;
 
     &:last-child {
       margin: 0;
