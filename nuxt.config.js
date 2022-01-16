@@ -56,7 +56,7 @@ export default {
   modules: [
     '@nuxtjs/axios',
     'nuxt-responsive-loader',
-    '@nuxtjs/pwa',
+    //'@nuxtjs/pwa',
     '@nuxtjs/redirect-module',
     'nuxt-webfontloader',
     '@nuxtjs/sitemap',
