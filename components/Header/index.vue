@@ -2,7 +2,7 @@
 <div>
   <div v-if="blok" class="header" v-editable="blok">
     <div class="header__background skeleton">
-      <img v-if="blok.image.filename" :src="blok.image.filename" alt="" title="" width="640px" height="480px" class="header__image" />
+      <img v-if="blok.image.filename" :data-src="blok.image.filename" alt="" title="" width="640px" height="480px" class="lazyload header__image" />
       <Picture v-else :src="require('~/assets/img/soextranails-bg.jpg')" :webp="require('~/assets/img/soextranails-bg.jpg?format=webp')" styling="header__image lazyload" alt="" width="640px" height="360px" />
     </div>
     <div class="row g-0 justify-content-center title text-center">

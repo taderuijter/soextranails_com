@@ -3,9 +3,9 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 col-md-10 col-lg-8">
-        <ul>
+        <ul :class="blok.layout">
           <li v-for="li in blok.items" :key="li._uidd">
-            {{ li.item }}
+            <rich-text-renderer :document="li.item" />
           </li>
         </ul>
       </div>
@@ -50,6 +50,14 @@ export default {
         line-height: 45px;
         left: 0;
         @include vertical-align;
+      }
+
+      div {
+        display: inline-block;
+      }
+
+      p:last-child {
+        margin: 0;
       }
     }
   }

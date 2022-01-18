@@ -21,7 +21,7 @@
               <div class="coupon__title">
                 {{ blok.content.title }}
               </div>
-              <div class="coupon__text">
+              <div class="coupon__text text-center">
                 <rich-text-renderer :document="blok.content.text" />
               </div>
             </div>

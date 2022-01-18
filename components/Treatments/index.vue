@@ -1,11 +1,15 @@
 <template>
   <div class="treatments" v-editable="blok" :class="[blok.margin_bottom, blok.margin_top]">
     <div class="container">
-      <div class="row justify-content-center">
+      
+      <div v-if="blok.layout === 'expanded'" class="row justify-content-center">
         <div v-for="treatment in sortedService" :key="treatment._uid" class="col-12 col-md-6 col-lg-4">
           <div class="treatment__item">
             <div class="treatment__price">
-              <p class="price"><span class="simbol">€</span> {{treatment.content.srv_price}},- </p>
+              <div class="treatment__price--content">
+                <span class="subline">FROM</span>
+                <span class="simbol">€</span> <span class="price">{{treatment.content.srv_price}},- </span>
+              </div>
             </div>
             <div class="treatment__image">
               <img v-if="treatment.content.srv_image.filename" :src="treatment.content.srv_image.filename" class="lazyload img-fluid" alt="" title="" width="640px" height="480px" />
@@ -28,10 +32,41 @@
             <div class="treatment__buttons text-center">
               <Button v-if="treatment.content.srv_booknow_text" type="href" :label="treatment.content.srv_booknow_text" :url="treatment.content.srv_booknow_url" styling="btn__primary mb-2 btn__full" />
               <Button v-if="treatment.content.srv_readmore_text" type="href" :label="treatment.content.srv_readmore_text" :url="treatment.content.srv_readmore_url" styling="btn__transparant btn__full" />
+              <div v-else style="height:51px;"></div>
             </div>
           </div>
         </div>
       </div>
+
+      <div v-else class="row justify-content-center">
+        <div v-for="treatment in sortedService" :key="treatment._uid" class="col-12 col-md-6 col-lg-4">
+          <div class="treatment__item">
+            <div class="treatment__price">
+              <div class="treatment__price--content">
+                <span class="subline">FROM</span>
+                <span class="simbol">€</span> <span class="price">{{treatment.content.srv_price}},- </span>
+              </div>
+            </div>
+            <div class="treatment__image">
+              <img v-if="treatment.content.srv_image.filename" :src="treatment.content.srv_image.filename" class="lazyload img-fluid" alt="" title="" width="640px" height="480px" />
+            </div>
+            <div class="treatment__content">
+              <p class="title">
+                {{ treatment.content.srv_title }}
+              </p>
+              <div class="text">
+                <rich-text-renderer :document="treatment.content.srv_text" />
+              </div>
+            </div>
+            <div class="treatment__buttons text-center">
+              <Button v-if="treatment.content.srv_booknow_text" type="href" :label="treatment.content.srv_booknow_text" :url="treatment.content.srv_booknow_url" styling="btn__primary mb-2 btn__full" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
     </div>
   </div>
 </template>
@@ -69,7 +104,7 @@ export default {
     .treatment__item {
       position: relative;
       border: 3px solid $black;
-      margin: 0 0 25px 0;
+      margin: 0 0 45px 0;
       @include border-radius(20px);
     }
 
@@ -82,16 +117,28 @@ export default {
       right: -20px;
       z-index: 2;
       text-align: center;
-      color: $white;
-      font-size: 35px;
-      font-weight: 600;
-      line-height: 125px;
       @include border-radius(100px);
       @include distortion;
 
-      .simbol {
-        font-size: 20px;
+      &--content {
+        font-weight: 600;
+        width: 125px;
+        text-align: center;
+        color: $white;
+        @include vertical-align;
+
+        .subline {
+          font-weight: 500;
+          display: block;
+          text-transform: uppercase;
+          font-size: 12px;
+        }
+
+        .price {
+          font-size: 35px;
+        }
       }
+
     }
 
     .treatment__image {
@@ -135,7 +182,7 @@ export default {
         min-height: auto;
 
         @include md-screen {
-          min-height: 90px;
+          min-height: 80px;
         }
       }
     }
