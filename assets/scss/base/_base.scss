@@ -15,9 +15,9 @@ body {
 
 /* Links */
 a {
+    font-weight: 600;
     color: $black;
     text-decoration: underline;
-    font-weight: 500;
 
     &:hover {
         color: lighten($black, 25%);

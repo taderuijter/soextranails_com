@@ -1,9 +1,12 @@
 <template>
   <div class="treatments" v-editable="blok" :class="[blok.margin_bottom, blok.margin_top]">
     <div class="container">
-      <div class="row">
+      <div class="row justify-content-center">
         <div v-for="treatment in sortedService" :key="treatment._uid" class="col-12 col-md-6 col-lg-4">
           <div class="treatment__item">
+            <div class="treatment__price">
+              <p class="price"><span class="simbol">€</span> {{treatment.content.srv_price}},- </p>
+            </div>
             <div class="treatment__image">
               <img v-if="treatment.content.srv_image.filename" :src="treatment.content.srv_image.filename" class="lazyload img-fluid" alt="" title="" width="640px" height="480px" />
             </div>
@@ -11,20 +14,20 @@
               <p class="title">
                 {{ treatment.content.srv_title }}
               </p>
-              <p class="text">
-                {{ treatment.content.srv_text }}
-              </p>
+              <div class="text">
+                <rich-text-renderer :document="treatment.content.srv_text" />
+              </div>
             </div>
             <div class="treatment__usp">
               <ul>
                 <li v-for="(usp, index) in treatment.content.srv_usp" :key="index">
-                  <span>{{ usp.item }}</span>
+                  <rich-text-renderer :document="usp.item" />
                 </li>
               </ul>
             </div>
             <div class="treatment__buttons text-center">
-              <Button type="href" :label="treatment.content.srv_booknow_text" :url="treatment.content.srv_booknow_url" styling="btn__primary mb-2 btn__full" />
-              <Button type="href" :label="treatment.content.srv_readmore_text" :url="treatment.content.srv_readmore_url" styling="btn__transparant btn__full" />
+              <Button v-if="treatment.content.srv_booknow_text" type="href" :label="treatment.content.srv_booknow_text" :url="treatment.content.srv_booknow_url" styling="btn__primary mb-2 btn__full" />
+              <Button v-if="treatment.content.srv_readmore_text" type="href" :label="treatment.content.srv_readmore_text" :url="treatment.content.srv_readmore_url" styling="btn__transparant btn__full" />
             </div>
           </div>
         </div>
@@ -64,10 +67,31 @@ export default {
   .treatments {
 
     .treatment__item {
-      overflow: hidden;
+      position: relative;
       border: 3px solid $black;
       margin: 0 0 25px 0;
       @include border-radius(20px);
+    }
+
+    .treatment__price {
+      position: absolute;
+      background-color: $black;
+      height: 125px;
+      width: 125px;
+      top: -30px;
+      right: -20px;
+      z-index: 2;
+      text-align: center;
+      color: $white;
+      font-size: 35px;
+      font-weight: 600;
+      line-height: 125px;
+      @include border-radius(100px);
+      @include distortion;
+
+      .simbol {
+        font-size: 20px;
+      }
     }
 
     .treatment__image {
@@ -76,6 +100,12 @@ export default {
       background-color: lighten($black, 90%);
       width: 100%;
       height: 200px;
+      -webkit-border-top-left-radius: 20px;
+      -webkit-border-top-right-radius: 20px;
+      -moz-border-radius-topleft: 20px;
+      -moz-border-radius-topright: 20px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
 
       img {
         width: 100%;
@@ -132,6 +162,10 @@ export default {
           padding: 12px 15px 12px 55px;
           background-color: lighten($primary, 15%);
           @include border-radius(100px);
+
+          p:last-child {
+            margin: 0;
+          }
 
           &::before {
             content: '';

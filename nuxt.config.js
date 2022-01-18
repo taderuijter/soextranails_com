@@ -1,6 +1,6 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
+  // target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -56,7 +56,7 @@ export default {
   modules: [
     '@nuxtjs/axios',
     'nuxt-responsive-loader',
-    //'@nuxtjs/pwa',
+    '@nuxtjs/pwa',
     '@nuxtjs/redirect-module',
     'nuxt-webfontloader',
     '@nuxtjs/sitemap',

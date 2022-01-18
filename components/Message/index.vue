@@ -9,7 +9,7 @@
               <img v-else src="~assets/img/bell.svg" width="70px" height="70px" alt="" title="">
             </div>
             <div class="col-12 col-md-10">
-              {{ blok.text }}
+              <rich-text-renderer :document="blok.text" />
             </div>
           </div>
         </div>

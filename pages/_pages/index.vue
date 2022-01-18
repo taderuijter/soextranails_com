@@ -75,9 +75,15 @@ export default {
     }
 
     if(context.store.state.service.loaded !== '1') {
-      let serviceRefRes = await context.app.$storyapi.get(`cdn/stories/`, { excluding_slugs: 'globals/*,home,faq/*', version: 'draft' })
+      let serviceRefRes = await context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'service/',  version: 'draft' })
       context.store.commit('service/setService', serviceRefRes.data.stories)
       context.store.commit('service/setLoaded', '1')
+    }
+
+    if(context.store.state.coupons.loaded !== '1') {
+      let couponsRefRes = await context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'coupons/', version: 'draft' })
+      context.store.commit('coupons/setCoupons', couponsRefRes.data.stories)
+      context.store.commit('coupons/setLoaded', '1')
     }
   },
 

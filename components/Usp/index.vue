@@ -2,11 +2,12 @@
   <div class="container usp" v-editable="blok" :class="[blok.margin_bottom, blok.margin_top]">
     
     <div v-if="blok.layout === 'small'" class="row justify-content-center">
-      <div class="col-12 col-lg-10 text-center">
-        <div class="row g-0">
-          <div class="col-12 col-md-4" v-for="usp in blok.items" :key="usp._uid">
-            <div class="usp__item">
-              <img src="~/assets/img/hearth.svg" alt="" title="" width="45px" height="45px" />{{ usp.item }}
+      <div class="col-12 col-md-10">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-4 mb-2 mt-2" v-for="usp in blok.items" :key="usp._uid">
+            <div class="usp__item d-flex flex-row">
+              <div class="align-self-center"><img class="img-fluid" src="~/assets/img/hearth.svg" alt="" title="" width="45px" height="45px" /> </div>
+              <div class="align-self-center">{{ usp.item }}</div>
             </div>
           </div>
         </div>
@@ -62,13 +63,8 @@
     }
 
     &__item {
-      line-height: 45px;
       font-weight: 600;
       text-transform: uppercase;
-
-      img {
-        margin: 0 5px 0 0;
-      }
     }
   }
 </style>

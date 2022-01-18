@@ -1,6 +1,6 @@
 <template>
 <div class="coupon" v-editable="blok" :class="[blok.margin_bottom, blok.margin_top]">
-  <div class="container">
+  <div class="container" v-for="(blok, index) in sortedCoupon" :key="index">
     <div class="row justify-content-center">
       <div class="col-12 col-md-10">
         <div class="coupon__item">
@@ -8,21 +8,21 @@
             <div class="col-12 col-lg-4 col-xl-3">
               <div class="coupon__sticker">
                 <div class="coupon__sticker--text">
-                  <p class="title">{{ blok.precentage }} <span>{{ blok.sign }}</span></p>
-                  <p class="subline">{{ blok.subline }}</p>
+                  <p class="title">{{ blok.content.precentage }} <span>{{ blok.content.sign }}</span></p>
+                  <p class="subline">{{ blok.content.subline }}</p>
                 </div>
                 <img src="~/assets/img/discount-sticker.png" alt="" title="" width="150px" height="150px"/>
               </div>
               <div class="coupon__note">
-                {{ blok.note }}
+                <rich-text-renderer :document="blok.content.note" />
               </div>
             </div>
             <div class="col-12 col-lg-8 col-xl-9 coupon__padding">
               <div class="coupon__title">
-                {{ blok.title }}
+                {{ blok.content.title }}
               </div>
               <div class="coupon__text">
-                {{ blok.text }}
+                <rich-text-renderer :document="blok.content.text" />
               </div>
             </div>
           </div>
@@ -35,14 +35,30 @@
 </template>
 
 <script>
-  export default {
+export default {
   props: {
     blok: {
       type: Object,
       required: true
     }
+  },
+
+  computed: {
+    sortedCoupon() {
+      // Load reference data/content from store
+      const featuredCoupon = this.$store.state.coupons.coupons.filter((coupons) => {
+        return this.blok.items.includes(coupons.uuid)
+      })
+
+      // Enable the ordering of the article previews
+      featuredCoupon.sort((a, b) => {
+        return this.blok.items.indexOf(a.uuid) - this.blok.items.indexOf(b.uuid);
+      })
+
+      return featuredCoupon
+    }
   }
-  }
+}
 </script>
 
 <style lang="scss" scoped>
