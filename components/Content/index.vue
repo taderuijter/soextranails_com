@@ -32,6 +32,10 @@ export default {
 
   p {
     margin: 0 0 25px 0;
+
+    &:last-child {
+      margin: 0;
+    }
   }
 
   span {

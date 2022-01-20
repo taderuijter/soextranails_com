@@ -11,10 +11,10 @@
   <div class="container" itemscope itemtype="https://schema.org/FAQPage">
     <div class="row justify-content-center">
       <div class="col-12 col-md-10 col-lg-8">
-      <div v-for="(faq, index) in sortedFaq" :key="index" >
+      <div v-for="(faq, index) in sortedFaq" :key="faq.uuid" >
         <div v-if="index === 0">
-          <div class="faq faq__open" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" :data-character-id="index">
-            <div class="faq__heading" @click="selectedFAQ(index)">
+          <div class="faq faq__open" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" :data-character-id="faq.uuid">
+            <div class="faq__heading" @click="selectedFAQ(faq.uuid)">
               <div class="row g-0 align-items-center">
                 <div class="col-11">
                   <h3>{{ faq.content.question }}</h3>
@@ -34,8 +34,8 @@
           </div>
         </div>
         <div v-else>
-          <div class="faq faq__closed" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" :data-character-id="index">
-            <div class="faq__heading" @click="selectedFAQ(index)">
+          <div class="faq faq__closed" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" :data-character-id="faq.uuid">
+            <div class="faq__heading" @click="selectedFAQ(faq.uuid)">
               <div class="row g-0 align-items-center">
                 <div class="col-11">
                   <h3>{{ faq.content.question }}</h3>

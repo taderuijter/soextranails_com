@@ -1,6 +1,6 @@
 <template>
 <div class="coupon" v-editable="blok" :class="[blok.margin_bottom, blok.margin_top]">
-  <div class="container" v-for="(blok, index) in sortedCoupon" :key="index">
+  <div class="container" v-for="blok in sortedCoupon" :key="blok.uuid">
     <div class="row justify-content-center">
       <div class="col-12 col-md-10">
         <div class="coupon__item">

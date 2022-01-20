@@ -55,11 +55,29 @@
       img {
         filter: invert(94%) sepia(39%) saturate(6848%) hue-rotate(327deg) brightness(91%) contrast(87%);
       }
+
+      a {
+        color: #DCB837;
+
+        &:hover {
+          color: #DCB837;
+          text-decoration: none;
+        }
+      }
     }
 
     &__error {
       background-color: #DF5B5B;
       color:#811919;
+
+      a {
+        color: #811919;
+
+        &:hover {
+          color: #811919;
+          text-decoration: none;
+        }
+      }
 
       img {
         filter: invert(10%) sepia(74%) saturate(3734%) hue-rotate(352deg) brightness(99%) contrast(88%);
@@ -69,6 +87,15 @@
     &__succes {
       background-color: #CEF5D9;
       color:#0D7C2D;
+
+      a {
+        color: #0D7C2D;
+
+        &:hover {
+          color: #0D7C2D;
+          text-decoration: none;
+        }
+      }
 
       img {
         filter: invert(32%) sepia(57%) saturate(698%) hue-rotate(85deg) brightness(101%) contrast(94%);

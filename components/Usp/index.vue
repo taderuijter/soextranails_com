@@ -7,7 +7,9 @@
           <div class="col-12 col-md-4 mb-2 mt-2" v-for="usp in blok.items" :key="usp._uid">
             <div class="usp__item d-flex flex-row">
               <div class="align-self-center"><img class="img-fluid" src="~/assets/img/hearth.svg" alt="" title="" width="45px" height="45px" /> </div>
-              <div class="align-self-center">{{ usp.item }}</div>
+              <div class="align-self-center">
+                <rich-text-renderer :document="usp.item" />
+              </div>
             </div>
           </div>
         </div>
