@@ -68,7 +68,7 @@ export default {
     }
 
     if(context.store.state.faq.loaded !== '1') {
-      let faqRefRes = await context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'faq/', version: 'draft' })
+      let faqRefRes = await context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'faq/', per_page: '100', version: 'draft' })
       context.store.commit('faq/setFaq', faqRefRes.data.stories)
       context.store.commit('faq/setLoaded', '1')
     }
