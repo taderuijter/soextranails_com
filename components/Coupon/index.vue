@@ -45,12 +45,12 @@ export default {
 
   computed: {
     sortedCoupon() {
-      // Load reference data/content from store
+      // Load reference data/content from store for coupons
       const featuredCoupon = this.$store.state.coupons.coupons.filter((coupons) => {
         return this.blok.items.includes(coupons.uuid)
       })
 
-      // Enable the ordering of the article previews
+      // Enable the ordering of the coupons, managed from backend
       featuredCoupon.sort((a, b) => {
         return this.blok.items.indexOf(a.uuid) - this.blok.items.indexOf(b.uuid);
       })

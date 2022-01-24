@@ -11,29 +11,7 @@
   <div class="container" itemscope itemtype="https://schema.org/FAQPage">
     <div class="row justify-content-center">
       <div class="col-12 col-md-10 col-lg-8">
-      <div v-for="(faq, index) in sortedFaq" :key="faq.uuid" >
-        <div v-if="index === 0">
-          <div class="faq faq__open" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" :data-character-id="faq.uuid">
-            <div class="faq__heading" @click="selectedFAQ(faq.uuid)">
-              <div class="row g-0 align-items-center">
-                <div class="col-11">
-                  <h3>{{ faq.content.question }}</h3>
-                </div>
-                <div class="col-1">
-                  <div class="faq__icon mr-auto">
-                    <img src="~/assets/img/chevron-down.svg" width="15" height="15" alt="" title="" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="faq__body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-              <div itemprop="text">
-                {{ faq.content.awnser }}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div v-else>
+        <div v-for="faq in sortedFaq" :key="faq.uuid" >
           <div class="faq faq__closed" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" :data-character-id="faq.uuid">
             <div class="faq__heading" @click="selectedFAQ(faq.uuid)">
               <div class="row g-0 align-items-center">
@@ -54,7 +32,6 @@
             </div>
           </div>
         </div>
-      </div>
       </div>
     </div>
 
@@ -91,12 +68,12 @@ export default {
 
   computed: {
     sortedFaq() {
-      // Load reference data/content from store
+      // Load reference data/content from store for faq
       const featuredFaq = this.$store.state.faq.faq.filter((faq) => {
         return this.blok.items.includes(faq.uuid)
       })
 
-      // Enable the ordering of the article previews
+      // Enable the ordering of the faq from the backend
       featuredFaq.sort((a, b) => {
         return this.blok.items.indexOf(a.uuid) - this.blok.items.indexOf(b.uuid);
       })

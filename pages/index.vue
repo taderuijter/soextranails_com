@@ -54,6 +54,7 @@ export default {
     })
   },
 
+  // Fetch data and put in in store, properly refactor this code later.
   async fetch(context) {
     if(context.store.state.navbar.loaded !== '1') {
       let navbarRefRes = await context.app.$storyapi.get(`cdn/stories/globals/navbar`, { version: 'draft' })
@@ -121,7 +122,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-
-</style>
