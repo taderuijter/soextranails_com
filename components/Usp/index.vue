@@ -3,13 +3,11 @@
     
     <div v-if="blok.layout === 'small'" class="row justify-content-center">
       <div class="col-12 col-md-10">
-        <div class="row justify-content-center">
-          <div class="col-12 col-md-4 mb-2 mt-2" v-for="usp in blok.items" :key="usp._uid">
-            <div class="usp__item d-flex flex-row">
-              <div class="align-self-center"><img class="img-fluid" src="~/assets/img/hearth.svg" alt="" title="" width="45px" height="45px" /> </div>
-              <div class="align-self-center">
-                <rich-text-renderer :document="usp.item" />
-              </div>
+        <div class="row justify-content-center text-center">
+          <div class="col-12 col-md-6 col-lg-4 mb-2 mt-2" v-for="usp in blok.items" :key="usp._uid">
+            <div class="usp__item">
+              <img class="img-fluid" src="~/assets/img/hearth.svg" alt="" title="" width="45px" height="45px" />
+              <rich-text-renderer :document="usp.item" />
             </div>
           </div>
         </div>
@@ -24,7 +22,7 @@
           </div>
           <div class="col-9">
             <h3>{{ usp.title }}</h3>
-            <p>{{ usp.text }}</p>
+            <rich-text-renderer :document="usp.text" />
           </div>
         </div>
       </div>
@@ -67,6 +65,10 @@
     &__item {
       font-weight: 600;
       text-transform: uppercase;
+
+      div {
+        display: inline-block;
+      }
     }
   }
 </style>

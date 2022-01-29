@@ -1,5 +1,5 @@
 <template>
-<div v-editable="blok" class="hero skeleton">
+<div v-editable="blok" class="hero skeleton hero__fade">
   <div class="circle">
     <div class="content text-center">
       <Heading>
@@ -138,6 +138,24 @@ export default {
     img {
       width: 100%;
       height: 100%;
+    }
+  }
+
+  &__fade {
+    opacity: 1;
+    animation-name: headerAnimation;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-duration: 0.5s;
+  }
+
+  @keyframes headerAnimation {
+    0% {
+      transform: translateY(+15px);
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }
 }

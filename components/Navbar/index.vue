@@ -13,7 +13,9 @@
     </ul>
   </div>
   <div class="navbar__brand">
+    <nuxt-link to="/">
     <Picture :src="require('~/assets/img/soextranails.png')" :webp="require('~/assets/img/soextranails.png?format=webp')" alt="So Extra Nails Logo" width="106px" height="127px" />
+    </nuxt-link>
   </div>
   <div class="navbar__cta">
     <Timer />

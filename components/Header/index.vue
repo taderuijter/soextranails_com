@@ -6,7 +6,7 @@
       <Picture v-else :src="require('~/assets/img/soextranails-bg.jpg')" :webp="require('~/assets/img/soextranails-bg.jpg?format=webp')" styling="header__image lazyload" alt="" width="640px" height="360px" />
     </div>
     <div class="row g-0 justify-content-center title text-center">
-      <div class="col-12 col-md-10 col-lg-8">
+      <div class="col-12 col-md-10 col-lg-8 header__fade">
         <Heading>
           <h1 class="heading__black heading__distortion">{{ blok.title }}</h1>
         </Heading>
@@ -19,7 +19,7 @@
       <Picture :src="require('~/assets/img/soextranails-bg.jpg')" :webp="require('~/assets/img/soextranails-bg.jpg?format=webp')" styling="header__image lazyload" alt="" width="640px" height="360px" />
     </div>
     <div class="row g-0 justify-content-center title text-center">
-      <div class="col-12 col-md-10 col-lg-8">
+      <div class="col-12 col-md-10 col-lg-8 header__fade">
         <Heading>
           <h1 class="heading__black heading__distortion">{{ title }}</h1>
         </Heading>
@@ -95,6 +95,24 @@ export default {
     @include xl-screen {
       width: 100%;
       height: auto;
+    }
+  }
+
+  &__fade {
+    opacity: 1;
+    animation-name: headerAnimation;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-duration: 0.5s;
+  }
+
+  @keyframes headerAnimation {
+    0% {
+      transform: translateY(+15px);
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }
 }

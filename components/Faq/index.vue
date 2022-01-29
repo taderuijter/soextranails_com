@@ -13,7 +13,7 @@
       <div class="col-12 col-md-10 col-lg-8">
         <div v-for="faq in sortedFaq" :key="faq.uuid" >
           <div class="faq faq__closed" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" :data-character-id="faq.uuid">
-            <div class="faq__heading" @click="selectedFAQ(faq.uuid)">
+            <div class="faq__heading" @click="selectedFAQ(faq.uuid)"  @blur="console.log(faq.uuid)">
               <div class="row g-0 align-items-center">
                 <div class="col-11">
                   <h3>{{ faq.content.question }}</h3>
@@ -27,7 +27,7 @@
             </div>
             <div class="faq__body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                {{ faq.content.awnser }}
+                <rich-text-renderer :document="faq.content.awnser" />
               </div>
             </div>
           </div>
@@ -63,7 +63,7 @@ export default {
         faqMessage.classList.remove('faq__open')
         faqMessage.classList.add('faq__closed')
       }
-    }
+    },
   },
 
   computed: {

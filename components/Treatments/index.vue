@@ -12,6 +12,8 @@
               </div>
             </div>
             <div class="treatment__image">
+              <div v-if="treatment.content.srv_category === 'upgrade'" class="tag tag--upgrade"> Upgrade </div>
+              <div v-else class="tag tag--base"> base </div>
               <img v-if="treatment.content.srv_image.filename" :src="treatment.content.srv_image.filename" class="lazyload img-fluid" alt="" title="" width="640px" height="480px" />
             </div>
             <div class="treatment__content">
@@ -48,6 +50,8 @@
               </div>
             </div>
             <div class="treatment__image">
+              <div v-if="treatment.content.srv_category === 'upgrade'" class="tag tag--upgrade"> Upgrade </div>
+              <div v-else class="tag tag--base"> base </div>
               <img v-if="treatment.content.srv_image.filename" :src="treatment.content.srv_image.filename" class="lazyload img-fluid" alt="" title="" width="640px" height="480px" />
             </div>
             <div class="treatment__content">
@@ -154,7 +158,29 @@ export default {
       border-top-left-radius: 20px;
       border-top-right-radius: 20px;
 
+      .tag {
+        position: absolute;
+        z-index: 2;
+        left: 20px;
+        top: 20px;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 600;
+        color: $black;
+        padding: 8px 15px;
+        @include border-radius(50px);
+
+        &--base {
+          background-color: $primary;
+        }
+
+        &--upgrade {
+          background-color: $secondary;
+        }
+      }
+
       img {
+        z-index: 1;
         width: 100%;
         height: auto;
         @include center-align;
