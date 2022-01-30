@@ -15,10 +15,20 @@
 
 <script>
 export default {
+  data() {
+    return {
+      show: false
+    }
+  },
   props: {
     blok: {
       type: Object,
       required: true
+    }
+  },
+  methods: {
+    visibilityChanged (isVisible) {
+      this.show = isVisible
     }
   }
 }
@@ -52,5 +62,22 @@ export default {
     }
   }
 
+  .fade-in {
+    opacity: 1;
+    animation-name: columnFade;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-duration: 1s;
+  }
+
+  @keyframes columnFade {
+    0% {
+      transform: translateY(-250px);
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 }
 </style>

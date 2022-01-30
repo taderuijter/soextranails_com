@@ -43,6 +43,12 @@ export default {
       @include distortion;
     }
 
+    &__white {
+      background-color: $white;
+      color: $black;
+      @include distortion;
+    }
+
     &__full {
       width: 100%;
     }

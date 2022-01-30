@@ -35,7 +35,8 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~/plugins/lazysizes', mode: 'client' },
-    { src: '~/plugins/axe.js', mode: 'client' },
+    // { src: '~/plugins/axe.js', mode: 'client' },
+    { src: '~/plugins/observer.js', mode: 'client' },
     '~/plugins/composition-api.js',
     '~/plugins/storyblok-rich-text-renderer.js'
   ],

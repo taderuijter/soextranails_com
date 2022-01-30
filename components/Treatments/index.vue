@@ -3,7 +3,7 @@
     <div class="container">
       
       <div v-if="blok.layout === 'expanded'" class="row justify-content-center">
-        <div v-for="treatment in sortedService" :key="treatment._uid" class="col-12 col-md-6 col-lg-4">
+        <div v-for="treatment in sortedService" :key="treatment._uid" class="col-12 col-md-6 col-lg-4 mb-5">
           <div class="treatment__item">
             <div class="treatment__price">
               <div class="treatment__price--content">
@@ -23,6 +23,9 @@
               <div class="text">
                 <rich-text-renderer :document="treatment.content.srv_text" />
               </div>
+            </div>
+            <div class="treatment__note text-center">
+              {{ treatment.content.srv_note }}
             </div>
             <div class="treatment__usp">
               <ul>
@@ -38,10 +41,17 @@
             </div>
           </div>
         </div>
+
+        <div v-if="blok.overview === 'yes'" class="col-12 col-md-6 c0l-lg-4 mb-5" style="background-color:#000;">
+          <div class="treatment__overview">
+            <Button v-if="blok.btn_text" type="href" :label="blok.btn_text" :url="blok.btn_url" styling="btn__white" />
+          </div>
+        </div>
+
       </div>
 
       <div v-else class="row justify-content-center">
-        <div v-for="treatment in sortedService" :key="treatment._uid" class="col-12 col-md-6 col-lg-4">
+        <div v-for="treatment in sortedService" :key="treatment._uid" class="col-12 col-md-6 col-lg-4 mb-5">
           <div class="treatment__item">
             <div class="treatment__price">
               <div class="treatment__price--content">
@@ -62,9 +72,18 @@
                 <rich-text-renderer :document="treatment.content.srv_text" />
               </div>
             </div>
+            <div class="treatment__note text-center">
+              {{ treatment.content.srv_note }}
+            </div>
             <div class="treatment__buttons text-center">
               <Button v-if="treatment.content.srv_booknow_text" type="href" :label="treatment.content.srv_booknow_text" :url="treatment.content.srv_booknow_url" styling="btn__primary mb-2 btn__full" />
             </div>
+          </div>
+        </div>
+
+        <div v-if="blok.overview === 'yes'" class="col-12 col-md-6 col-lg-4 mb-5">
+          <div class="treatment__overview">
+            <Button v-if="blok.btn_text" type="href" :label="blok.btn_text" :url="blok.btn_url" styling="btn__white" />
           </div>
         </div>
       </div>
@@ -108,7 +127,6 @@ export default {
     .treatment__item {
       position: relative;
       border: 3px solid $black;
-      margin: 0 0 45px 0;
       @include border-radius(20px);
     }
 
@@ -189,7 +207,7 @@ export default {
     }
 
     .treatment__content {
-      padding: 25px;
+      padding: 25px 25px 5px 25px;
       text-align: center;
 
       p {
@@ -211,6 +229,12 @@ export default {
           min-height: 80px;
         }
       }
+    }
+
+    .treatment__note {
+      font-size: 10px;
+      height: 32px;
+      line-height: 32px;
     }
 
     .treatment__usp {
@@ -260,6 +284,20 @@ export default {
 
     .treatment__buttons {
       padding: 10px 25px;
+    }
+
+    .treatment__overview {
+      position: relative;
+      background-color: $black;
+      height: 100%;
+      @include border-radius(20px);
+
+      .btn {
+        width: 70%;
+        text-align: center;
+        @include center-align;
+      }
+
     }
 
   }
