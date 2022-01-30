@@ -18,7 +18,7 @@ export default {
 .heading {
   h1,h2,h3,h4,h5,h6,p,span {
     font-family: 'HyperwaveOne';
-    font-size: 62px;
+    font-size: 70px;
     font-weight: 400 !important;
     line-height: 32px;
 

@@ -4,7 +4,7 @@
       <div class="col-12 col-md-10 col-lg-8">
         <div class="message" :class="blok.styling">
           <div class="row g-0 align-items-center">
-            <div class="col-12 col-md-2">
+            <div class="col-12 col-md-2 text-center text-md-start">
               <img v-if="blok.image.filename" :src="blok.image.filename" width="70px" height="70px" alt="" title="">
               <img v-else src="~assets/img/bell.svg" width="70px" height="70px" alt="" title="">
             </div>
@@ -31,8 +31,13 @@
 
 <style lang="scss" scoped>
   .message {
+    font-size: 14px;
     padding: 30px;
     @include border-radius(20px);
+
+    @include md-screen {
+      font-size: 16px;
+    }
 
     p:last-child {
       margin: 0;

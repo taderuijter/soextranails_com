@@ -31,8 +31,13 @@ export default {
   }
 
   p {
-    font-size:20px;
-    line-height: 24px;
+    font-size:16px;
+    line-height: 20px;
+
+    @include md-screen {
+      font-size:20px;
+      line-height: 24px;
+    }
   }
 }
 </style>

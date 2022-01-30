@@ -51,11 +51,11 @@ export default {
   &__background {
     position: relative;
     overflow: hidden;
-    height: 20vh;
+    height: 350px;
     @include border-radius-top(50px);
 
-    @include sm-screen {
-      height: 30vh;
+    @include md-screen {
+      height: 400px;
     }
 
     @include lg-screen {
@@ -83,8 +83,8 @@ export default {
     @include center-align;
 
     @include md-screen {
-      width: 100%;
-      height: auto;
+      width: auto;
+      height: 100%;
     }
 
     @include lg-screen {
@@ -95,6 +95,11 @@ export default {
     @include xl-screen {
       width: 100%;
       height: auto;
+    }
+
+    @include custom-screen(1366px) {
+      height: 100%;
+      width: auto;
     }
   }
 

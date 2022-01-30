@@ -199,9 +199,14 @@ export default {
 
       img {
         z-index: 1;
-        width: 100%;
-        height: auto;
+        width: auto;
+        height: 100%;
         @include center-align;
+
+        @include xs-screen {
+          width: 100%;
+          height: auto;
+        }
       }
 
     }
