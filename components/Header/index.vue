@@ -98,8 +98,8 @@ export default {
     }
 
     @include custom-screen(1366px) {
-      height: 100%;
-      width: auto;
+      height: auto;
+      width: 100%;
     }
   }
 
