@@ -42,7 +42,7 @@
           </div>
         </div>
 
-        <div v-if="blok.overview === 'yes'" class="col-12 col-md-6 c0l-lg-4 mb-5" style="background-color:#000;">
+        <div v-if="blok.overview === 'yes'" class="col-12 col-md-6 col-lg-4 mb-5">
           <div class="treatment__overview">
             <Button v-if="blok.btn_text" type="href" :label="blok.btn_text" :url="blok.btn_url" styling="btn__white" />
           </div>
@@ -86,10 +86,8 @@
             <Button v-if="blok.btn_text" type="href" :label="blok.btn_text" :url="blok.btn_url" styling="btn__white" />
           </div>
         </div>
+
       </div>
-
-
-
     </div>
   </div>
 </template>
@@ -290,20 +288,18 @@ export default {
     .treatment__buttons {
       padding: 10px 25px;
     }
+  }
 
-    .treatment__overview {
-      position: relative;
-      background-color: $black;
-      height: 100%;
-      @include border-radius(20px);
+  .treatment__overview {
+    position: relative;
+    background-color: $black;
+    height: 100%;
+    @include border-radius(20px);
 
-      .btn {
-        width: 70%;
-        text-align: center;
-        @include center-align;
-      }
-
+    .btn {
+      width: 70%;
+      text-align: center;
+      @include center-align;
     }
-
   }
 </style>

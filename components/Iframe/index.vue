@@ -3,9 +3,10 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12">
-        <div class="iframe">
+        <div v-if="blok.type === 'iframe'" class="iframe">
           <iframe class="responsive-iframe lazyload" :data-src="blok.url"></iframe>
         </div>
+        <div v-if="blok.type === 'salonized'" v-html="blok.salonized"></div>
       </div>
     </div>
   </div>

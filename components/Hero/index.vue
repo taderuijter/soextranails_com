@@ -5,7 +5,7 @@
       <Heading>
         <h1 class="heading__black heading__distortion">{{ blok.title }}</h1>
       </Heading>
-      <p>{{ blok.text }}</p>
+      <rich-text-renderer :document="blok.text" />
       <Button v-if="blok.btn_enable === true" type="href" :label="blok.btn_text" :url="blok.btn_url" styling="btn__primary" />
     </div>
   </div>

@@ -8,8 +8,11 @@
               <img v-if="blok.image.filename" :src="blok.image.filename" width="70px" height="70px" alt="" title="">
               <img v-else src="~assets/img/bell.svg" width="70px" height="70px" alt="" title="">
             </div>
-            <div class="col-12 col-md-10">
+            <div v-if="blok.text" class="col-12 col-md-10">
               <rich-text-renderer :document="blok.text" />
+            </div>
+            <div v-else class="col-12 col-md-10">
+              <slot></slot>
             </div>
           </div>
         </div>

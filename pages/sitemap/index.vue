@@ -29,7 +29,7 @@ export default {
 
   asyncData (context) {
     return context.app.$storyapi.get('cdn/stories', {
-      excluding_slugs: 'globals/*,home,faq/*,coupons/*',
+      excluding_slugs: 'globals/*,home,faq/*,coupons/*,service/*',
       version: 'draft'
     }).then((res) => {
       return res.data
