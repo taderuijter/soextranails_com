@@ -57,5 +57,9 @@ export default {
   &__shadow {
     text-shadow: 4px 4px 0px #000000;
   }
+
+    &__highlight {
+    text-shadow: 4px 4px 0px #FFFFFF;
+  }
 }
 </style>
