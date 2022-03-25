@@ -39,9 +39,19 @@
       html = document.documentElement;
       let maxHeight = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
 
-      // Set height to hide CTA
-      let height = maxHeight - 1200; 
-      
+      // Get vindow width based on device
+      let intViewportWidth = window.innerWidth;
+      console.log(intViewportWidth)
+
+      // Set height to hide CTA on scroll
+      let height
+
+      if( intViewportWidth >= 480 ){
+        height = maxHeight - 1150;
+      } else {
+        height = maxHeight - 1300;
+      }
+
       // Function to shpw the CTA button on scroll
       let showButton = function () {
         var y = window.scrollY;
