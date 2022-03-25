@@ -34,7 +34,7 @@
       const btn = this.$refs['ctaBtn']
       let showButton = function () {
         var y = window.scrollY;
-        if (y >= 800) {
+        if (y >= 300) {
           btn.className = "cta cta__show"
         } else {
           btn.className = "cta cta__hide"
@@ -67,8 +67,8 @@
       padding: 15px;
       width: 300px;
       text-align: center;
-      box-shadow: 0px 18px 88px -4px #18274B24;
-      box-shadow: 0px 8px 28px -6px #18274B1F;
+      -webkit-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.15); 
+      box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.15);
       margin: 0 auto;
       @include border-radius(100px);
 
