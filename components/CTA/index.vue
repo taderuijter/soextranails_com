@@ -31,16 +31,28 @@
     },
 
     mounted(){
+      // Get element by id in vue
       const btn = this.$refs['ctaBtn']
+
+      // Get max height of window
+      let body = document.body,
+      html = document.documentElement;
+      let maxHeight = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
+
+      // Set height to hide CTA
+      let height = maxHeight - 1200; 
+      
+      // Function to shpw the CTA button on scroll
       let showButton = function () {
         var y = window.scrollY;
-        if (y >= 300) {
+        if (y >= 300 && y <= height ) {
           btn.className = "cta cta__show"
         } else {
           btn.className = "cta cta__hide"
         }
       };
 
+      // Execute the function on scroll
       window.addEventListener("scroll", showButton);
     }
   }
