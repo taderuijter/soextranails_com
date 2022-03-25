@@ -10,13 +10,16 @@
             </Heading>
           </div>
 
-          <div class="col-10 col-lg-8 mt-5 mb-3">
+          <div class="col-10 mt-5 mb-3">
             <div class="booking__usp">
-              <ul>
-                <li v-for="usp in blok.usp" :key="usp._uid">
-                  <rich-text-renderer :document="usp.item" />
-                </li>
-              </ul>
+              <div class="row justify-content-center text-center">
+                <div class="col-12 col-md-6 col-lg-4" v-for="usp in blok.usp" :key="usp._uid">
+                  <div class="usp__item">
+                    <img class="img-fluid" src="~/assets/img/hearth.svg" alt="" title="" width="45px" height="45px" />
+                    <rich-text-renderer :document="usp.item" />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -33,6 +36,7 @@
             </div>
           </div>
 
+          <div class="salonized-booking" data-company="BqqgaGB5Mkg5jU47eL2C1u5t" data-color="#090909" data-language="en" data-height="700" data-inline=true data-outline="shadow"></div><script src="https://static-widget.salonized.com/loader.js"></script>
         </div>
       </div>
     </div>
@@ -54,11 +58,15 @@
 
 <style lang="scss">
   .booking {
+    margin: 0 0 700px 0;
     position: relative;
-    overflow: hidden;
     padding: 10% 0;
     text-align: center;
     @include border-radius(50px);
+
+    @include lg-screen {
+      margin: 0 0 630px 0;
+    }
 
     &__content {
       position: relative;
@@ -66,25 +74,35 @@
     }
 
     &__usp {
-      padding: 20px 0;
+      padding: 20px 15px;
       border: 3px solid black;
       background-color: $white;
       @include border-radius(100px);
 
-      ul {
-        margin: 0;
-        list-style: none;
-        padding: 0;
-
-        li {
-          display: inline-block;
-          margin: 0 15px;
+      .usp {
+        h2,h3,h4,h5,h6 {
+          font-size: 22px;
+          text-transform: uppercase;
+          font-weight: 700;
+          margin: 0 0 15px 0;
         }
-      }
 
-      p {
-        margin: 0;
-        padding: 0;
+        p {
+          margin: 0;
+        }
+
+        &__item {
+          font-weight: 600;
+          text-transform: uppercase;
+
+          div {
+            display: inline-block;
+          }
+
+          p {
+            margin: 0;
+          }
+        }
       }
     }
 
@@ -93,6 +111,7 @@
       height: 100%;
       z-index: 1;
       @include center-align;
+      @include border-radius(50px);
     }
 
     .message {
@@ -137,6 +156,11 @@
           }
         }
       }
+    }
+
+    .salonized-booking {
+      @include horizontal-align;
+      bottom: -685px;
     }
   }
 </style>

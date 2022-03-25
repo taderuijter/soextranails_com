@@ -3,6 +3,8 @@
     <section v-for="blok in story.content.body" :key="blok._uid">
       <component v-if="blok.component" :blok="blok" :is="blok.component" />
     </section>
+
+    <CTA v-if="story.content.cta_button" :text="story.content.cta_button" :url="story.content.cta_url" :time="story.content.cta_time" />
   </div>
 </template>
 

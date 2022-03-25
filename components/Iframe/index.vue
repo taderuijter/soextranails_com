@@ -6,7 +6,8 @@
         <div v-if="blok.type === 'iframe'" class="iframe">
           <iframe class="responsive-iframe lazyload" :data-src="blok.url"></iframe>
         </div>
-        <div v-if="blok.type === 'salonized'" v-html="blok.salonized"></div>
+        <div v-if="blok.type === 'booking'"  class="salonized-booking" data-company="BqqgaGB5Mkg5jU47eL2C1u5t" data-color="#090909" data-language="en" data-height="700" data-inline=true data-outline="shadow"></div><script src="https://static-widget.salonized.com/loader.js"></script>
+        <div v-if="blok.type === 'coupons'"  class="salonized-voucher" data-company="BqqgaGB5Mkg5jU47eL2C1u5t" data-color="#090909" data-language="en" data-height="400" data-inline=true></div><script src="https://static-widget.salonized.com/loader.js"></script>
       </div>
     </div>
   </div>

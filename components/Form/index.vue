@@ -44,7 +44,7 @@
             </div>
             <div class="col-12 col-md-6">
               <div class="form__field">
-                <label for="email">{{ blok.name_label }}</label>
+                <label for="email">{{ blok.email_label }}</label>
                 <input required v-model="email" name="email" id="email" type="email"/>
               </div>
             </div>
