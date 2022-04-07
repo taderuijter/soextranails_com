@@ -1,10 +1,17 @@
 <template>
 <div class="navbar">
-  <button class="nav-mobile" @click="toggleMobileMenu">
-    <div :class="{ active : mobileMenu }" id="nav-toggle">
-      <span></span>
-    </div>
-  </button>
+
+  <div class="navbar__brand">
+    <nuxt-link to="/">
+      <img src="@/assets/img/soextranails.png" alt="So Extra Nails Logo" width="106px" height="127px">
+    </nuxt-link>
+  </div>
+
+  <div class="navbar__cta">
+    <Timer />
+    <Button type="href" :label="btnTxt" :url="btnUrl" styling="btn__primary" />
+  </div>
+
   <div class="navbar__list" :class="{ 'navbar__list--active' : mobileMenu }">
     <ul>
       <li v-for="(link, index) in navbar" :key="index">
@@ -12,15 +19,13 @@
       </li>
     </ul>
   </div>
-  <div class="navbar__brand">
-    <nuxt-link to="/">
-    <Picture :src="require('~/assets/img/soextranails.png')" :webp="require('~/assets/img/soextranails.png?format=webp')" alt="So Extra Nails Logo" width="106px" height="127px" />
-    </nuxt-link>
-  </div>
-  <div class="navbar__cta">
-    <Timer />
-    <Button type="href" :label="btnTxt" :url="btnUrl" styling="btn__primary" />
-  </div>
+
+  <button class="nav-mobile" @click="toggleMobileMenu">
+    <div :class="{ active : mobileMenu }" id="nav-toggle">
+      <span></span>
+    </div>
+  </button>
+
 </div>
 </template>
 
@@ -42,27 +47,75 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .navbar {
+  position: fixed;
+  z-index: 999;
+  background-color: $white;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   padding: 0;
   width: 100%;
   height: 80px;
+  left: 0;
 
   @include lg-screen {
-    position: relative;
-  }
-
-  @include xl-screen {
     padding: 0 60px;
   }
 
-  &__list {
-    opacity: 0;
-    z-index: 98;
+  &__brand {
+    z-index: 99;
+    margin: 5px 0 0 0;
     position: absolute;
+    left: 10px;
+    top: 0;
+
+    img {
+      height: 70px;
+      width: auto;
+    }
+
+    @include md-screen {
+      left: 50px;
+    }
+
+    @include lg-screen {
+      margin: 10px 0 0 0;
+      img {
+        height: 120px;
+        width: auto;
+      }
+      @include horizontal-align;
+    }
+  }
+
+  &__cta {
+    z-index: 99;
+    align-self: center;
+    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
+    height: 80px;
+
+    .timer {
+      display: none !important;
+    }
+
+    @include lg-screen {
+      align-self: flex-end;
+
+      .timer {
+        display: inline-flex !important;
+      }
+    }
+  }
+
+  &__list {
+    position: fixed;
+    z-index: 98;
     background-color: $white;
     width: 100%;
     height: 100%;
@@ -76,12 +129,11 @@ export default {
       position: absolute;
       background-color: transparent;
       top: 0;
-      left: 0;
+      left: 60px;
       line-height: 80px;
     }
 
     &--active {
-      opacity: 1;
       top: 0;
       left: 0;
     }
@@ -120,6 +172,10 @@ export default {
           text-transform: uppercase;
 
           @include lg-screen {
+            font-size: 13px;
+          }
+
+          @include xl-screen {
             font-size: 14px;
           }
 
@@ -152,54 +208,7 @@ export default {
     }
   }
 
-  &__cta {
-    z-index: 99;
-    align-self: center;
-    display: inline-block;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
-    align-items: center;
-    height: 80px;
 
-    .timer {
-      display: none;
-    }
-
-    @include lg-screen {
-      align-self: flex-end;
-
-      .timer {
-        display: inline-flex;
-      }
-    }
-  }
-
-  &__brand {
-    z-index: 99;
-    margin: 10px 0 0 0;
-    position: absolute;
-    left: 10px;
-    top: 0;
-
-    @include md-screen {
-      left: 50px;
-    }
-
-    @include lg-screen {
-      @include horizontal-align;
-    }
-  }
-
-  .navbar__brand::v-deep .image {
-    width: auto;
-    height: 60px;
-
-    @include lg-screen {
-      width: 106px;
-      height: 127px;
-    }
-  }
 
   /* Mobile navigation */
 .nav-mobile {
